@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,16 +27,25 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="549.66666666666663" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="keyboardReturnTapped:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="hs2-82-drx"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrZ-Kc-VHh">
                                                 <rect key="frame" x="557.66666666666663" y="0.0" width="68.333333333333371" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="보내기"/>
+                                                <connections>
+                                                    <action selector="sendButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="07L-U8-wFe"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6a-rd-2td">
                                                 <rect key="frame" x="634" y="0.0" width="44" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Aa"/>
+                                                <connections>
+                                                    <action selector="colorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FBG-TG-PzT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -57,6 +67,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="MOb-zL-iYQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="R5s-hw-J5O"/>
                             <constraint firstItem="7vw-ZI-gMx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="XiA-qJ-kXY"/>
@@ -66,9 +77,24 @@
                             <constraint firstItem="7vw-ZI-gMx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kui-QY-8lo"/>
                             <constraint firstItem="MOb-zL-iYQ" firstAttribute="top" secondItem="7vw-ZI-gMx" secondAttribute="bottom" constant="30" id="vVv-3X-D2g"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="GgS-0N-xzd" appends="YES" id="82S-CV-Gvb"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="MOb-zL-iYQ" id="zM7-AN-tdB"/>
+                        <outlet property="mainTextField" destination="jfb-Fp-USs" id="OK3-pF-0cW"/>
+                        <outlet property="sendButton" destination="vrZ-Kc-VHh" id="Nl3-DR-vTZ"/>
+                        <outlet property="textColorButton" destination="p6a-rd-2td" id="fNH-2v-TdV"/>
+                        <outlet property="upperView" destination="7vw-ZI-gMx" id="WZl-bO-W4L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="GgS-0N-xzd">
+                    <connections>
+                        <action selector="backgroundTapGesture:" destination="BYZ-38-t0r" id="afL-yT-kcG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="57.74647887323944" y="-2.2900763358778624"/>
         </scene>
