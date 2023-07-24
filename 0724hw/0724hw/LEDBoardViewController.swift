@@ -21,7 +21,7 @@ class LEDBoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 초기 화면 레이블 Hello Swift
+        // 디자인
         designMainLabel(mainLabel)
         designButton(sendButton, name: "보내기")
         designButton(textColorButton, name: "Aa")
@@ -82,7 +82,6 @@ class LEDBoardViewController: UIViewController {
         
         // 레이블 띄워주기
         mainLabel.text = mainTextField.text
-        
     }
     
     // 배경 선택 시 - 키보드 내려가기 or 상단 뷰 토글
@@ -90,7 +89,7 @@ class LEDBoardViewController: UIViewController {
         // 키보드 올라와 있는 상태 -> 키보드 내리기
         // 키보드 내려가 있는 상태 -> 상단 뷰 토글
         
-        // 현재 키보드가 올라와있는지에 대한 변수가 필요하다 -> isEditing()
+        // 현재 키보드가 올라와있는지에 대한 변수가 필요하다 -> isEditing
         if (mainTextField.isEditing) {
             view.endEditing(true)
         }
@@ -113,12 +112,5 @@ class LEDBoardViewController: UIViewController {
         mainTextField.textColor = setColor
         textColorButton.tintColor = setColor
         mainLabel.textColor = setColor
-        
-        
     }
-    
-    
-    // 텍스트 컬러 버튼 누르면 상단 뷰 토글 처리 -> ???
-
-
 }
