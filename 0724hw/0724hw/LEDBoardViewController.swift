@@ -90,10 +90,14 @@ class LEDBoardViewController: UIViewController {
         // 키보드 올라와 있는 상태 -> 키보드 내리기
         // 키보드 내려가 있는 상태 -> 상단 뷰 토글
         
-        upperView.isHidden.toggle()
+        // 현재 키보드가 올라와있는지에 대한 변수가 필요하다 -> isEditing()
+        if (mainTextField.isEditing) {
+            view.endEditing(true)
+        }
+        else {
+            upperView.isHidden.toggle()
+        }
         
-        // 현재 키보드가 올라와있는지에 대한 변수가 필요하다
-        view.endEditing(true)
     }
     
     // 텍스트 컬러 버튼 누르면 색깔 랜덤으로 변경 -> textfield, 버튼, 레이블
