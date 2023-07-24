@@ -54,7 +54,7 @@ class NewlyCoinedWord2ViewController: UIViewController {
     }
     
     
-    /* ==== 디자인 함수 ==== */
+    /* ==== 초기 디자인 함수 ==== */
     // search textfield 디자인
     func designSearchTextField(_ field: UITextField) {
         field.placeholder = "신조어를 입력하세요"
@@ -90,19 +90,19 @@ class NewlyCoinedWord2ViewController: UIViewController {
     
     
     /* ==== 기능 함수 ==== */
+    // tag 버튼에 쓰인 단어 랜덤으로 재분베
     func randomTagButton() {
         
         // 딕셔너리에서 단어만 랜덤으로 4개 꺼낸다 (겹치지 않게)
-        let keys = wordDict.keys
+        let keys = wordDict.keys    // 바로 배열 타입이 아닌 것 같아서 하나씩 꺼내서 append해준다
         var randomKeys: [String] = []
         
         for i in keys {
             randomKeys.append(i)
         }
-        randomKeys.shuffle()
+        randomKeys.shuffle()    // 누를 때마다 서로 다른 단어가 조합될 수 있도록 shuffle 해준다
         
         // 버튼 텍스트 교체
-        
         tagButton1.setTitle(randomKeys[0], for: .normal)
         tagButton2.setTitle(randomKeys[1], for: .normal)
         tagButton3.setTitle(randomKeys[2], for: .normal)
@@ -110,6 +110,7 @@ class NewlyCoinedWord2ViewController: UIViewController {
         
     }
     
+    // 올바르지 않은 단어가 입력되었을 때 alert 팝업 창
     func showAlert(title: String, message: String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -126,6 +127,7 @@ class NewlyCoinedWord2ViewController: UIViewController {
         meaningLabel.text = ""
     }
     
+    // textfield에 있는 단어를 토대로 뜻을 출력. 뜻이 없다면 팝업창
     func showMeaning() {
         // 0. image 변경
         backgroundImage.image = UIImage(named: "background")
@@ -164,29 +166,33 @@ class NewlyCoinedWord2ViewController: UIViewController {
     }
     
     
-    
+    // return 버튼
     @IBAction func keyboardReturnTapped(_ sender: UITextField) {
         showMeaning()
         randomTagButton()
     }
     
+    // 검색 버튼
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         showMeaning()
         randomTagButton()
     }
     
-    
+    // 배경 터치
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
-    
+    // 태그 버튼
     @IBAction func tagButtonTapped(_ sender: UIButton) {
         // 1. textfield에 적히게
         searchTextField.text = sender.currentTitle
         
         // 2. 그대로 검색 (showMeaning)
         showMeaning()
+        
+        // 3. 랜덤 태그버튼
+        randomTagButton()
     }
     
     
