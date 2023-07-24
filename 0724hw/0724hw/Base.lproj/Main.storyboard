@@ -105,13 +105,124 @@
                     <view key="view" contentMode="scaleToFill" id="w9t-KA-dIh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-SX-Sjj">
+                                <rect key="frame" x="20" y="89" width="353" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wpw-PC-T6x">
+                                        <rect key="frame" x="0.0" y="0.0" width="329" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="keyboardReturnTapped:" destination="diK-kH-gyo" eventType="editingDidEndOnExit" id="PKJ-hu-3D6"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6u-CX-6k4">
+                                        <rect key="frame" x="329" y="0.0" width="24" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="diK-kH-gyo" eventType="touchUpInside" id="5Mx-A5-Pwj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bMA-Dd-C2g"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNl-Hg-cHf">
+                                <rect key="frame" x="20" y="159" width="75" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tagButtonTapped:" destination="diK-kH-gyo" eventType="touchUpInside" id="sKx-uP-Lbj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXN-fT-p3x">
+                                <rect key="frame" x="103" y="159" width="75" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tagButtonTapped:" destination="diK-kH-gyo" eventType="touchUpInside" id="QJG-FL-8rK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REL-45-sQP">
+                                <rect key="frame" x="186" y="159" width="75" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tagButtonTapped:" destination="diK-kH-gyo" eventType="touchUpInside" id="0p6-pf-R9M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4f-Dx-UgU">
+                                <rect key="frame" x="269" y="159" width="75" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tagButtonTapped:" destination="diK-kH-gyo" eventType="touchUpInside" id="tmp-kc-KG8"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wmr-p3-htf">
+                                <rect key="frame" x="20" y="333.33333333333331" width="353" height="219.99999999999994"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="U8b-S9-tRV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vU-l7-3sZ">
+                                <rect key="frame" x="30" y="343.33333333333331" width="333" height="189.99999999999994"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="L2c-KN-fkI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KpR-2Z-aBJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="REL-45-sQP" firstAttribute="top" secondItem="Mhx-SX-Sjj" secondAttribute="bottom" constant="20" id="2cD-0w-nic"/>
+                            <constraint firstItem="wXN-fT-p3x" firstAttribute="leading" secondItem="aNl-Hg-cHf" secondAttribute="trailing" constant="8" id="AYc-b1-OeH"/>
+                            <constraint firstItem="KpR-2Z-aBJ" firstAttribute="trailing" secondItem="Mhx-SX-Sjj" secondAttribute="trailing" constant="20" id="C0S-Mp-lSV"/>
+                            <constraint firstItem="aNl-Hg-cHf" firstAttribute="top" secondItem="Mhx-SX-Sjj" secondAttribute="bottom" constant="20" id="C2J-RI-QhQ"/>
+                            <constraint firstItem="wXN-fT-p3x" firstAttribute="top" secondItem="Mhx-SX-Sjj" secondAttribute="bottom" constant="20" id="Em6-sV-Hpg"/>
+                            <constraint firstItem="aNl-Hg-cHf" firstAttribute="leading" secondItem="KpR-2Z-aBJ" secondAttribute="leading" constant="20" id="IQc-GZ-TYE"/>
+                            <constraint firstItem="KpR-2Z-aBJ" firstAttribute="trailing" secondItem="wmr-p3-htf" secondAttribute="trailing" constant="20" id="JZr-DU-pwW"/>
+                            <constraint firstItem="w4f-Dx-UgU" firstAttribute="top" secondItem="Mhx-SX-Sjj" secondAttribute="bottom" constant="20" id="TCb-VD-DTj"/>
+                            <constraint firstItem="w4f-Dx-UgU" firstAttribute="leading" secondItem="REL-45-sQP" secondAttribute="trailing" constant="8" id="UMK-Xi-dpO"/>
+                            <constraint firstItem="REL-45-sQP" firstAttribute="leading" secondItem="wXN-fT-p3x" secondAttribute="trailing" constant="8" id="Xs3-XB-LWM"/>
+                            <constraint firstItem="wmr-p3-htf" firstAttribute="top" secondItem="aNl-Hg-cHf" secondAttribute="bottom" constant="140" id="gPy-fn-7wt"/>
+                            <constraint firstItem="KpR-2Z-aBJ" firstAttribute="trailing" secondItem="5vU-l7-3sZ" secondAttribute="trailing" constant="30" id="gqN-7I-0YT"/>
+                            <constraint firstItem="5vU-l7-3sZ" firstAttribute="leading" secondItem="KpR-2Z-aBJ" secondAttribute="leading" constant="30" id="hc8-Pf-5Ip"/>
+                            <constraint firstItem="Mhx-SX-Sjj" firstAttribute="top" secondItem="KpR-2Z-aBJ" secondAttribute="top" constant="30" id="l9v-X8-Bro"/>
+                            <constraint firstItem="5vU-l7-3sZ" firstAttribute="top" secondItem="aNl-Hg-cHf" secondAttribute="bottom" constant="150" id="m2V-RL-bdW"/>
+                            <constraint firstItem="wmr-p3-htf" firstAttribute="leading" secondItem="KpR-2Z-aBJ" secondAttribute="leading" constant="20" id="sa1-4P-Rrj"/>
+                            <constraint firstItem="Mhx-SX-Sjj" firstAttribute="leading" secondItem="KpR-2Z-aBJ" secondAttribute="leading" constant="20" id="uaz-E8-fpU"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="87V-pZ-LT9" appends="YES" id="srD-oA-7u3"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="wmr-p3-htf" id="rBf-mr-PxX"/>
+                        <outlet property="meaningLabel" destination="5vU-l7-3sZ" id="HIi-Op-wwW"/>
+                        <outlet property="searchButton" destination="o6u-CX-6k4" id="FLH-HV-woO"/>
+                        <outlet property="searchTextField" destination="wpw-PC-T6x" id="Swr-tq-27D"/>
+                        <outlet property="tagButton1" destination="aNl-Hg-cHf" id="1rk-ER-Ras"/>
+                        <outlet property="tagButton2" destination="wXN-fT-p3x" id="1oA-iG-alv"/>
+                        <outlet property="tagButton3" destination="REL-45-sQP" id="xah-2t-WHO"/>
+                        <outlet property="tagButton4" destination="w4f-Dx-UgU" id="FQx-Q8-4V0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNM-M7-PeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="87V-pZ-LT9">
+                    <connections>
+                        <action selector="tapGesture:" destination="diK-kH-gyo" id="XOd-Yc-GEd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="58" y="1004"/>
+            <point key="canvasLocation" x="55.725190839694655" y="812.67605633802816"/>
         </scene>
     </scenes>
     <resources>
