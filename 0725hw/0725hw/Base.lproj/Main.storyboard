@@ -282,6 +282,11 @@
                         <outletCollection property="nameLabels" destination="gZI-dB-Pdi" collectionClass="NSMutableArray" id="hB7-AT-Yu3"/>
                         <outletCollection property="nameLabels" destination="EGm-gm-xT0" collectionClass="NSMutableArray" id="Iqa-oT-O5G"/>
                         <outletCollection property="nameLabels" destination="znh-Kg-czo" collectionClass="NSMutableArray" id="Dwn-6b-WSK"/>
+                        <outletCollection property="emojiPoints" destination="8SU-9k-MYi" collectionClass="NSMutableArray" id="eJW-bl-ker"/>
+                        <outletCollection property="emojiPoints" destination="4On-in-TRE" collectionClass="NSMutableArray" id="hYp-Gl-mzj"/>
+                        <outletCollection property="emojiPoints" destination="lab-lA-69R" collectionClass="NSMutableArray" id="CjB-t8-qdN"/>
+                        <outletCollection property="emojiPoints" destination="kzJ-pt-IMq" collectionClass="NSMutableArray" id="8dH-3R-1sG"/>
+                        <outletCollection property="emojiPoints" destination="MO9-Uq-rZV" collectionClass="NSMutableArray" id="8oG-gQ-bvF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8y-O1-BNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

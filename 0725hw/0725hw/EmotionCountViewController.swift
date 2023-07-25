@@ -42,8 +42,16 @@ class EmotionCountViewController: UIViewController {
     // 각 버튼의 터치 횟수 (카운트 수)
     var countNum = [0, 0, 0, 0, 0]
     
+    let names = ["완전행복지수", "적당미소지수", "그냥그냥지수", "좀속상한지수", "많이슬픈지수"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // countNum 초기화
+        for i in 0...4 {
+            countNum[i] = 0
+            UserDefaults.standard.set(countNum[i], forKey: names[i])
+        }
 
         designButton(veryGoodButton, Emotion(rawValue: 0)!)
         designButton(goodButton, Emotion(rawValue: 1)!)
@@ -96,6 +104,8 @@ class EmotionCountViewController: UIViewController {
     
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
         countNum[sender.tag] += 1
+        
+        UserDefaults.standard.set(countNum[sender.tag], forKey: names[sender.tag])
         
         
         print("현재 감정(\(sender.tag)) 터치 횟수 : \(countNum[sender.tag])")
