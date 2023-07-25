@@ -18,12 +18,7 @@ class EmotionResultViewController: UIViewController {
 
     @IBOutlet var emojiPoints: [UILabel]!
     
-    
-    
-    @IBOutlet var ss: UIButton!
     let names = ["완전행복지수", "적당미소지수", "그냥그냥지수", "좀속상한지수", "많이슬픈지수"]
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,14 +31,6 @@ class EmotionResultViewController: UIViewController {
             emojiPoints[i].textColor = .white
             emojiPoints[i].font = UIFont.systemFont(ofSize: 30)
         }
-        
-        
-        
-        // pull down button 연습
-        let ok = UIAction(title: "확인", handler: { _ in print("확인") })
-        let cancel = UIAction(title: "취소", attributes: .destructive, handler: { _ in print("취소") })
-        let buttonMenu = UIMenu(title: "메뉴 타이틀", children: [ok, cancel])
-        ss.menu = buttonMenu
     }
     
     

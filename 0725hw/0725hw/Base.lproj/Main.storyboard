@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,27 +73,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="5Kj-sK-4KZ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="JqA-lk-X4b">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="QA1-YO-lia">
-                                <rect key="frame" x="290" y="7" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="coJ-in-rdc">
-                                    <children>
-                                        <command title="Item 1" id="hUQ-Tk-o7q"/>
-                                        <command title="Item 2" id="XiU-vY-sQA"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <connections>
-                                <action selector="pullDownButtonTapped:" destination="BYZ-38-t0r" id="7yw-Ze-1Vz"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="2hn-2E-9xv"/>
                     </navigationItem>
                     <connections>
                         <outlet property="badButton" destination="atS-AV-hs8" id="TEy-ca-ynS"/>
                         <outlet property="goodButton" destination="vw0-HD-RYo" id="W4l-fN-i9r"/>
-                        <outlet property="pullDownButton" destination="JqA-lk-X4b" id="a5l-UE-fkv"/>
+                        <outlet property="navigationItem" destination="5Kj-sK-4KZ" id="Cl7-O1-mRc"/>
+                        <outlet property="pullDownButton3" destination="2hn-2E-9xv" id="tsr-4f-4pL"/>
                         <outlet property="sosoButton" destination="FiO-Hv-ZY7" id="mfk-rz-mwh"/>
                         <outlet property="veryBadButton" destination="ocY-Rk-uHK" id="c3b-ZH-FPh"/>
                         <outlet property="veryGoodButton" destination="FWN-kj-sf9" id="sgh-oF-7us"/>
@@ -237,17 +222,6 @@
                                     <constraint firstItem="MO9-Uq-rZV" firstAttribute="centerY" secondItem="Fqw-Uu-LCf" secondAttribute="centerY" id="uNY-ZY-oFv"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eax-q3-0il">
-                                <rect key="frame" x="102" y="628" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="dmJ-dw-kNb">
-                                    <children>
-                                        <command title="Item 1" id="Imb-om-v8p"/>
-                                        <command title="Item 2" id="fZb-GY-5jj"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DKB-PQ-dCw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -271,7 +245,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="gbd-xB-Wx5"/>
                     <connections>
-                        <outlet property="ss" destination="eax-q3-0il" id="Bij-dr-ORy"/>
                         <outletCollection property="resultViews" destination="iMP-4M-BJx" collectionClass="NSMutableArray" id="Xj4-Yv-R92"/>
                         <outletCollection property="resultViews" destination="Hem-1w-Ifb" collectionClass="NSMutableArray" id="94c-YV-gwO"/>
                         <outletCollection property="resultViews" destination="Bnq-j3-uD6" collectionClass="NSMutableArray" id="psh-zX-hqK"/>

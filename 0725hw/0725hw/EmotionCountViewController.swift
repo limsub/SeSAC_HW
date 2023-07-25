@@ -27,6 +27,8 @@ class EmotionCountViewController: UIViewController {
     // Q. 배열에 저장되는 순서는, 스토리보드에 연결한 순서일까?
     //@IBOutlet var emotionButton: [UIButton]!
     
+    
+    
     // 버튼 outlet
     @IBOutlet var veryGoodButton: UIButton!
     @IBOutlet var goodButton: UIButton!
@@ -35,8 +37,10 @@ class EmotionCountViewController: UIViewController {
     @IBOutlet var veryBadButton: UIButton!
     
 
-    // Pull down Button
-    @IBOutlet var pullDownButton: UIBarButtonItem!
+    @IBOutlet var pullDownButton3: UIBarButtonItem!
+    
+    // 몇 점씩 올릴지 변수
+    var m = 1;
     
     
     // 각 버튼의 터치 횟수 (카운트 수)
@@ -59,13 +63,7 @@ class EmotionCountViewController: UIViewController {
         designButton(badButton, Emotion(rawValue: 3)!)
         designButton(veryBadButton, Emotion(rawValue: 4)!)
         
-        designPullDownButton(pullDownButton)
-        
-        let ok = UIAction(title: "확인", handler: { _ in print("확인") })
-        let cancel = UIAction(title: "취소", attributes: .destructive, handler: { _ in print("취소") })
-        let buttonMenu = UIMenu(title: "메뉴 타이틀", children: [ok, cancel])
-        
-        pullDownButton.menu = buttonMenu
+        designPullDownButton(pullDownButton3)
     }
     
     // 버튼 디자인
@@ -92,9 +90,14 @@ class EmotionCountViewController: UIViewController {
     
     // pull down button 디자인
     func designPullDownButton(_ sender: UIBarButtonItem) {
-        let ok = UIAction(title: "확인", handler: { _ in print("확인") })
-        let cancel = UIAction(title: "취소", attributes: .destructive, handler: { _ in print("취소") })
-        let buttonMenu = UIMenu(title: "메뉴 타이틀", children: [ok, cancel])
+        sender.image  = UIImage(systemName: "pencil.circle")
+        
+        let mul1 = UIAction(title: "x 1", handler: {_ in self.m = 1})
+        let mul5 = UIAction(title: "x 5", handler: {_ in self.m = 5})
+        let mul10 = UIAction(title: "x 10", handler: {_ in self.m = 10})
+        
+        
+        let buttonMenu = UIMenu(title: "점수를 선택하세요", children: [mul1, mul5, mul10])
         
         sender.menu = buttonMenu
     }
@@ -103,7 +106,7 @@ class EmotionCountViewController: UIViewController {
     
     
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
-        countNum[sender.tag] += 1
+        countNum[sender.tag] += m
         
         UserDefaults.standard.set(countNum[sender.tag], forKey: names[sender.tag])
         
@@ -120,4 +123,5 @@ class EmotionCountViewController: UIViewController {
     // UIButton을 Navigation bar 안에 넣으면 UIBarButtonItem이 되는데
     // 그냥 UIButton으로 했을 때와 어떤 차이가 있는지
     
+    // Navigation bar 안에 버튼을 넣을 땐 반드시 UIBarButton으로 넣어줘야 한다!!!
 }
