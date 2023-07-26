@@ -73,8 +73,8 @@ class SignUpViewController: UIViewController {
         
         // 다음으로 버튼 디자인
         nextButton.setTitle("다음으로", for: .normal)
-        nextButton.backgroundColor = .systemPink
-        nextButton.tintColor = .white
+        nextButton.backgroundColor = .systemGray5
+        nextButton.tintColor = .darkGray
         nextButton.layer.cornerRadius = 10
         
     }
@@ -135,6 +135,19 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    // 다음으로 넘어갈 수 있는 상태인지 확인
+    func checkNextPage() -> Bool {
+        if let t1 = idTextField.text, let t2 = passwordTextField.text,
+           let t3 = passwordConfirmTextField.text, let t4 = nicknameTextField.text {
+            if (!t1.isEmpty && !t2.isEmpty && !t3.isEmpty && !t4.isEmpty) &&
+                (t2 == t3) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     
     // confirm button tapped
     @IBAction func confirmButtonTapped(_ sender: UIButton) {
@@ -189,9 +202,6 @@ class SignUpViewController: UIViewController {
         mine.set(passwordTextField.text, forKey: "pw")
         mine.set(nicknameTextField.text, forKey: "nickname")
         mine.set(format.string(from: birthdayPicker.date), forKey: "birthday")
-        
-        
-        
     }
     
     
@@ -226,5 +236,20 @@ class SignUpViewController: UIViewController {
         
         
     }
+    
+    
+    // 모든 입력이 완료되면 버튼 색이 변하게 설정
+    // -> 이제 실제 버튼이 안눌리게도 하는 방법 찾아보자
+    @IBAction func EditingIdTextfield(_ sender: UITextField) {
+        if (checkNextPage()) {
+            nextButton.tintColor = .white
+            nextButton.backgroundColor = .systemPink
+        }
+        else {
+            nextButton.tintColor = .darkGray
+            nextButton.backgroundColor = .systemGray5
+        }
+    }
+    
     
 }

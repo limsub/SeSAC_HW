@@ -37,6 +37,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="EditingIdTextfield:" destination="BYZ-38-t0r" eventType="editingChanged" id="L0I-yz-og9"/>
                                     <action selector="returnKeyTapped:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="PCQ-f1-xzk"/>
                                 </connections>
                             </textField>
@@ -54,6 +55,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="EditingIdTextfield:" destination="BYZ-38-t0r" eventType="editingChanged" id="cme-BL-JNd"/>
                                     <action selector="returnKeyTapped:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="GjR-9f-RP6"/>
                                 </connections>
                             </textField>
@@ -83,6 +85,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="EditingIdTextfield:" destination="BYZ-38-t0r" eventType="editingChanged" id="bfQ-Di-fYR"/>
                                     <action selector="returnKeyTapped:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Qji-nk-IAn"/>
                                 </connections>
                             </textField>
@@ -100,6 +103,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="EditingIdTextfield:" destination="BYZ-38-t0r" eventType="editingChanged" id="8eh-Mg-E7b"/>
                                     <action selector="returnKeyTapped:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="uXd-Su-MCP"/>
                                 </connections>
                             </textField>
