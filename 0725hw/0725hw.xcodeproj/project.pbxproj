@@ -16,6 +16,7 @@
 		48313DA12A6FAD51007A4E88 /* EmotionCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48313DA02A6FAD51007A4E88 /* EmotionCountViewController.swift */; };
 		48313DA32A6FAF03007A4E88 /* EmotionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48313DA22A6FAF03007A4E88 /* EmotionEnum.swift */; };
 		48313DA52A6FB9BB007A4E88 /* EmotionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48313DA42A6FB9BB007A4E88 /* EmotionResultViewController.swift */; };
+		48313DA72A6FE451007A4E88 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48313DA62A6FE451007A4E88 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		48313DA02A6FAD51007A4E88 /* EmotionCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCountViewController.swift; sourceTree = "<group>"; };
 		48313DA22A6FAF03007A4E88 /* EmotionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionEnum.swift; sourceTree = "<group>"; };
 		48313DA42A6FB9BB007A4E88 /* EmotionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionResultViewController.swift; sourceTree = "<group>"; };
+		48313DA62A6FE451007A4E88 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				48313D8E2A6FAADE007A4E88 /* SceneDelegate.swift */,
 				48313D902A6FAADE007A4E88 /* ViewController.swift */,
 				48313D922A6FAADE007A4E88 /* Main.storyboard */,
+				48313DA62A6FE451007A4E88 /* TestViewController.swift */,
 				48313DA02A6FAD51007A4E88 /* EmotionCountViewController.swift */,
 				48313DA42A6FB9BB007A4E88 /* EmotionResultViewController.swift */,
 				48313DA22A6FAF03007A4E88 /* EmotionEnum.swift */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48313DA72A6FE451007A4E88 /* TestViewController.swift in Sources */,
 				48313DA32A6FAF03007A4E88 /* EmotionEnum.swift in Sources */,
 				48313DA52A6FB9BB007A4E88 /* EmotionResultViewController.swift in Sources */,
 				48313DA12A6FAD51007A4E88 /* EmotionCountViewController.swift in Sources */,

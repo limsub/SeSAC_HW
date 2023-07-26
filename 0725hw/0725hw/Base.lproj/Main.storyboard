@@ -73,6 +73,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="5Kj-sK-4KZ">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="YsX-JI-o39">
+                            <connections>
+                                <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="abo-qK-uaj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="2hn-2E-9xv"/>
                     </navigationItem>
                     <connections>
@@ -272,6 +277,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WGW-Qq-LEN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x8t-L6-Ll0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
@@ -326,6 +332,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0W-ZF-M1P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1162.5954198473282" y="786.61971830985919"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="Hkp-tu-nvD">
+            <objects>
+                <viewController id="epn-68-QFi" customClass="TestViewController" customModule="_725hw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="50D-Cp-QOR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnA-Da-rQV">
+                                <rect key="frame" x="159" y="83" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddK-8h-1gY">
+                                <rect key="frame" x="159" y="158" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-L8-18a">
+                                <rect key="frame" x="159" y="243" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drW-Qk-xSe">
+                                <rect key="frame" x="159" y="303" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UE-Jy-2Kn">
+                                <rect key="frame" x="159" y="366" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YL-0U-wpQ">
+                                <rect key="frame" x="159" y="432" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB9-Pv-7nQ">
+                                <rect key="frame" x="159" y="498" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUR-lK-oGx">
+                                <rect key="frame" x="159" y="560" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WLD-cH-P1j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="buttons" destination="VnA-Da-rQV" collectionClass="NSMutableArray" id="wdD-Dg-TcO"/>
+                        <outletCollection property="buttons" destination="ddK-8h-1gY" collectionClass="NSMutableArray" id="yni-kV-c3V"/>
+                        <outletCollection property="buttons" destination="drW-Qk-xSe" collectionClass="NSMutableArray" id="ctA-bu-MDg"/>
+                        <outletCollection property="buttons" destination="2UE-Jy-2Kn" collectionClass="NSMutableArray" id="LJl-oT-LT4"/>
+                        <outletCollection property="buttons" destination="4YL-0U-wpQ" collectionClass="NSMutableArray" id="5q8-Wg-mhN"/>
+                        <outletCollection property="buttons" destination="IB9-Pv-7nQ" collectionClass="NSMutableArray" id="qgX-OC-5ly"/>
+                        <outletCollection property="buttons" destination="MUR-lK-oGx" collectionClass="NSMutableArray" id="nfA-7e-1jp"/>
+                        <outletCollection property="buttons" destination="tWn-L8-18a" collectionClass="NSMutableArray" id="fZk-DY-Qvv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hre-Sz-cAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="1630"/>
         </scene>
     </scenes>
     <resources>

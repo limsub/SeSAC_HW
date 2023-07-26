@@ -5,6 +5,14 @@
 //  Created by 임승섭 on 2023/07/25.
 //
 
+
+// 7/26 update
+// 1. enum 좀 더 다양하게 써보기
+// 2. tag 코드로 구현
+// 3. UserDefaults 손보기
+// 4. reset 버튼 -> alert 띄워주기 (확인 / 취소)
+
+
 import UIKit
 
 class EmotionCountViewController: UIViewController {
@@ -45,7 +53,6 @@ class EmotionCountViewController: UIViewController {
     
     // 각 버튼의 터치 횟수 (카운트 수)
     var countNum = [0, 0, 0, 0, 0]
-    
     let names = ["완전행복지수", "적당미소지수", "그냥그냥지수", "좀속상한지수", "많이슬픈지수"]
     
     override func viewDidLoad() {
@@ -68,6 +75,10 @@ class EmotionCountViewController: UIViewController {
     
     // 버튼 디자인
     func designButton(_ sender: UIButton, _ emoji: Emotion) {
+        
+        // (0726) tag 지정
+        sender.tag = emoji.rawValue
+        
         switch emoji {
         case .veryGood:
             sender.setImage(UIImage(named: "emoji1"), for: .normal)
@@ -124,4 +135,36 @@ class EmotionCountViewController: UIViewController {
     // 그냥 UIButton으로 했을 때와 어떤 차이가 있는지
     
     // Navigation bar 안에 버튼을 넣을 땐 반드시 UIBarButton으로 넣어줘야 한다!!!
+    
+    
+    
+    // (0726) reset Button alert
+    @IBAction func resetButtonTapped(_ sender: UIBarButtonItem) {
+        
+        // 1. 내용
+
+        let alert = UIAlertController(title: "버튼 횟수를 모두 초기화하시겠습니까?", message: "count는 (x 1)로 초기화됩니다", preferredStyle: .alert)
+        
+        // 2. 취소 / 확인
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let ok = UIAlertAction(title: "확인", style: .default) { _ in
+            self.m = 1
+            for i in 0...4 {
+                self.countNum[i] = 0
+                UserDefaults.standard.set(self.countNum[i], forKey: self.names[i])
+            }
+        }
+        
+        // 3. 연결
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        
+        // 4. 띄우기
+        present(alert, animated: true)
+        
+        
+        
+
+    }
+    
 }
