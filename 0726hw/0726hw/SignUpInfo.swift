@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Sign {
+enum Sign: Int {
     case id
     case password
     case confirmpassword
