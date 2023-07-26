@@ -15,6 +15,7 @@
 		48313DC12A70F1EC007A4E88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48313DBF2A70F1EC007A4E88 /* LaunchScreen.storyboard */; };
 		48313DC92A70F275007A4E88 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48313DC82A70F275007A4E88 /* SignUpViewController.swift */; };
 		48313DCB2A70F53B007A4E88 /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48313DCA2A70F53B007A4E88 /* SignUpInfo.swift */; };
+		4838E3B22A710C0500ACAE1E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E3B12A710C0500ACAE1E /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		48313DC22A70F1EC007A4E88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48313DC82A70F275007A4E88 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		48313DCA2A70F53B007A4E88 /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfo.swift; sourceTree = "<group>"; };
+		4838E3B12A710C0500ACAE1E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				48313DB62A70F1EA007A4E88 /* SceneDelegate.swift */,
 				48313DB82A70F1EA007A4E88 /* ViewController.swift */,
 				48313DBA2A70F1EA007A4E88 /* Main.storyboard */,
+				4838E3B12A710C0500ACAE1E /* ResultViewController.swift */,
 				48313DC82A70F275007A4E88 /* SignUpViewController.swift */,
 				48313DCA2A70F53B007A4E88 /* SignUpInfo.swift */,
 				48313DBD2A70F1EC007A4E88 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 				48313DC92A70F275007A4E88 /* SignUpViewController.swift in Sources */,
 				48313DCB2A70F53B007A4E88 /* SignUpInfo.swift in Sources */,
 				48313DB72A70F1EA007A4E88 /* SceneDelegate.swift in Sources */,
+				4838E3B22A710C0500ACAE1E /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

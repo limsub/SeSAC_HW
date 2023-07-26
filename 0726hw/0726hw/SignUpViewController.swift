@@ -17,6 +17,8 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    let mine = UserDefaults.standard
+    let format = DateFormatter()
     
     
     @IBOutlet var mainLabel: UILabel!
@@ -176,6 +178,24 @@ class SignUpViewController: UIViewController {
         alert.addAction(ok)
         // 4. 띄우기
         present(alert, animated: true)
+    }
+    
+    // next button tapped
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        
+        format.dateFormat = "yyyy년 M월 dd일"
+        
+        mine.set(idTextField.text, forKey: "id")
+        mine.set(passwordTextField.text, forKey: "pw")
+        mine.set(nicknameTextField.text, forKey: "nickname")
+        mine.set(format.string(from: birthdayPicker.date), forKey: "birthday")
+        
+        
+        
+    }
+    
+    
+    @IBAction func datePickerTapped(_ sender: UIDatePicker) {
         
     }
     
