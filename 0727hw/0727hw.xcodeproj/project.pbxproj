@@ -15,6 +15,7 @@
 		4838E3F42A72519E00ACAE1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4838E3F22A72519E00ACAE1E /* LaunchScreen.storyboard */; };
 		4838E3FC2A7256C300ACAE1E /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E3FB2A7256C300ACAE1E /* SettingTableViewController.swift */; };
 		4838E3FE2A725A0800ACAE1E /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E3FD2A725A0800ACAE1E /* ShoppingTableViewController.swift */; };
+		4838E4022A72868D00ACAE1E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E4012A72868D00ACAE1E /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4838E3F52A72519E00ACAE1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4838E3FB2A7256C300ACAE1E /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		4838E3FD2A725A0800ACAE1E /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
+		4838E4012A72868D00ACAE1E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				4838E3E92A72519B00ACAE1E /* SceneDelegate.swift */,
 				4838E3EB2A72519B00ACAE1E /* ViewController.swift */,
 				4838E3ED2A72519B00ACAE1E /* Main.storyboard */,
+				4838E4012A72868D00ACAE1E /* TestViewController.swift */,
 				4838E3FD2A725A0800ACAE1E /* ShoppingTableViewController.swift */,
 				4838E3FB2A7256C300ACAE1E /* SettingTableViewController.swift */,
 				4838E3F02A72519E00ACAE1E /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 				4838E3EC2A72519B00ACAE1E /* ViewController.swift in Sources */,
 				4838E3E82A72519B00ACAE1E /* AppDelegate.swift in Sources */,
 				4838E3FE2A725A0800ACAE1E /* ShoppingTableViewController.swift in Sources */,
+				4838E4022A72868D00ACAE1E /* TestViewController.swift in Sources */,
 				4838E3EA2A72519B00ACAE1E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
