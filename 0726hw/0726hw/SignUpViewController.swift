@@ -252,4 +252,15 @@ class SignUpViewController: UIViewController {
     }
     
     
+    
+    
+    
+    // 7/27
+    @IBAction func countButtonTapped(_ sender: UIButton) {
+        
+        let cnt = UserDefaults.standard.integer(forKey: "count")
+        let result = cnt + 1
+        UserDefaults.standard.set(result, forKey: "count")
+    }
+    
 }
