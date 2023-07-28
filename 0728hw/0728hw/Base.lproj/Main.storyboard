@@ -115,6 +115,9 @@
                     <navigationItem key="navigationItem" id="O4P-4R-lU4">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Bhk-Iv-nMv"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pullDownButton" destination="Bhk-Iv-nMv" id="rXT-tG-Vwb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W43-Y8-gFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
