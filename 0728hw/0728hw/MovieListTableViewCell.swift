@@ -15,6 +15,7 @@ class MovieListTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subLabel: UILabel!
     @IBOutlet var storyLabel: UILabel!
+    @IBOutlet var likeButton: UIButton!
     
     // 2. 셀 데이터 및 디자인
     func designCell(_ row: Movie) {
@@ -34,6 +35,18 @@ class MovieListTableViewCell: UITableViewCell {
         storyLabel.text = row.overview
         storyLabel.numberOfLines = 5
         storyLabel.font = .systemFont(ofSize: 13)
+        
+        // (5). 버튼
+        likeButton.setImage(UIImage(systemName:
+                                        (row.like) ? "star.fill" : "star"), for: .normal)
+    }
+    
+    
+    
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        
+        //data[sender.tag].like
+        
     }
     
 }
