@@ -253,8 +253,6 @@ class SignUpViewController: UIViewController {
     
     
     
-    
-    
     // 7/27
     @IBAction func countButtonTapped(_ sender: UIButton) {
         

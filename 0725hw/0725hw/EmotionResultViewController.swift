@@ -14,7 +14,6 @@ class EmotionResultViewController: UIViewController {
     @IBOutlet var resultViews: [UIView]!
     @IBOutlet var nameLabels: [UILabel]!
     
-    
 
     @IBOutlet var emojiPoints: [UILabel]!
     
@@ -60,6 +59,4 @@ class EmotionResultViewController: UIViewController {
             break
         }
     }
-    
-    
 }

@@ -15,34 +15,41 @@ import UIKit
 //      2 - 1. 선택하면 즐겨찾기 배열에 추가 -> index로 할 지?
 //      2 - 2. 취소하면 즐겨찾기에서 제외 -> index를 어떻게 저장하냐. 딕셔너리?
 
+// 7/29 재도전
+// 1. data를 불러옴 (전역x)
+// 2. 빈 배열 2개 생성 (fullList, likeList) Array<Movie>
+// 3. 초기값 추가 (fullList - 전체 / likeLise - true)
+// 4. 어떤 변수를 설정하고 왔다갔다 하는 것 보다, 그냥 screenType에 따라 두 배열을 보여주는 쪽으로 하자
+// 성공ㅎ
+
+
 
 enum screenType: Int {
     case all
     case like
 }
 
-var data = MovieInfo()
+
 
 class MovieListTableViewController: UITableViewController {
+    
+    var data = MovieInfo()
+    var fullList: [Movie] = []
+    var likeList: [Movie] = []
     
     // 사용하는 배열 : MovieInfo (struct)의 movie. [Movie]
     // 섹션 개수 : 1
     // 셀 개수 : MovieInfo.movie.count
     
-    var movies = data.movie
     
     //var data = MovieInfo()
     
     // 즐겨찾기 한 애들의 index 번호만 저장하려고 했는데 tag때문에 꼬일 것 같아서
     // 그냥 통으로 Movie 타입으로 저장해버린다
     //var likeList: [Int] = []    // movie의 인덱스 번호를 저장한다
-    var likeList: [Movie] = []
+    
     
     var screen = screenType.all.rawValue      // 0 : 전체 / 1 : 즐겨찾기
-    
-
-    
-
     
     @IBOutlet var pullDownButton: UIBarButtonItem!
     
@@ -53,10 +60,12 @@ class MovieListTableViewController: UITableViewController {
         designPullDownButton(pullDownButton)
         
         
-        // like가 true인 애들 배열에 추가
-        for  i in movies {
+        // 각 배열 초기화
+        for i in data.movie {
+            fullList.append(i)
+            
             if i.like {
-                likeList.insert(i, at: 0)
+                likeList.append(i)
             }
         }
     }
@@ -64,7 +73,7 @@ class MovieListTableViewController: UITableViewController {
     
     // 1. 셀 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return (screen == 0) ? fullList.count : likeList.count
     }
     
     // 2. 셀 데이터 및 디자인
@@ -73,18 +82,29 @@ class MovieListTableViewController: UITableViewController {
         // MovieListTableViewCell 클래스의 함수를 사용하기 위해 타입 캐스팅
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieListTableViewCell.identifier) as! MovieListTableViewCell
         
+        if ( screen == 0 ) {
+            cell.designCell(fullList[indexPath.row])
+            cell.likeButton.tag = indexPath.row
+            cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        }
+        else {
+            cell.designCell(likeList[indexPath.row])
+            cell.likeButton.tag = indexPath.row
+            cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        }
         
         
         
-        // 몇 번째인지 -> indexPath.row                  <Int>
-        // 어떤 영화인지 -> data.movie[indexPath.row]     <Movie>
-        cell.designCell(movies[indexPath.row])
         
-        
-        
-        // 태그 버튼을 indexPath.row로 지정
-        cell.likeButton.tag = indexPath.row
-        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+//        // 몇 번째인지 -> indexPath.row                  <Int>
+//        // 어떤 영화인지 -> data.movie[indexPath.row]     <Movie>
+//        cell.designCell(movies[indexPath.row])
+//
+//
+//
+//        // 태그 버튼을 indexPath.row로 지정
+//        cell.likeButton.tag = indexPath.row
+//        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         
         
         
@@ -94,19 +114,27 @@ class MovieListTableViewController: UITableViewController {
     @objc
     func likeButtonTapped(_ sender: UIButton) {
         
-        movies[sender.tag].like.toggle()
-        tableView.reloadData()
-        
-        
-        // 눌러서 true가 되었으면 리스트에 추가해주기
-        if (movies[sender.tag].like) {
-            likeList.insert(movies[sender.tag], at: 0)
+        if (screen == 0) {
+            fullList[sender.tag].like.toggle()
+            makeLikeList()
+            tableView.reloadData()
         }
-        // 눌러서 false가 되었으면 리스트에서 제거
-        
-        
-        print(likeList)
-        
+        else {
+            // 즐겨찾기 창에 나온 영화들은 일단 like가 모두 true
+            // 눌렀다는 건 해제한다는 뜻
+            // 해당 영화를 fullList에서 찾아서 like를 false로 바꿔주고 makeLikeList() 호출
+            
+            let title = likeList[sender.tag].title
+            
+            for i in 0...fullList.count-1 {
+                if fullList[i].title == title {
+                    fullList[i].like = false;
+                }
+            }
+            
+            makeLikeList()
+            tableView.reloadData()
+        }
     }
     
     
@@ -120,19 +148,11 @@ class MovieListTableViewController: UITableViewController {
         
         let op1 = UIAction(title: "전체") { _ in
             self.screen = screenType.all.rawValue
-            self.movies = data.movie
             self.tableView.reloadData()
-            //sender.setTitle(self.option, for: .normal)  // 선택하자마자 바로 업데이트되도록
-            
-            print(data.movie)
         }
         let op2 = UIAction(title: "즐겨찾기") { _ in
             self.screen = screenType.like.rawValue
-            self.movies = self.likeList
             self.tableView.reloadData()
-            //sender.setTitle(self.option, for: .normal)
-            
-            print(data.movie)
         }
         
         let buttonMenu = UIMenu(title: "옵션을 선택하세요", children: [op1, op2])
@@ -141,5 +161,15 @@ class MovieListTableViewController: UITableViewController {
     }
     
     
+    // fullList에서 likeList를 추출하는 함수
+    func makeLikeList() {
+        likeList.removeAll()
+        
+        for m in fullList {
+            if m.like {
+                likeList.append(m)
+            }
+        }
+    }
 
 }

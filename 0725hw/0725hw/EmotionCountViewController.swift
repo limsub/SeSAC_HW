@@ -137,7 +137,6 @@ class EmotionCountViewController: UIViewController {
     // Navigation bar 안에 버튼을 넣을 땐 반드시 UIBarButton으로 넣어줘야 한다!!!
     
     
-    
     // (0726) reset Button alert
     @IBAction func resetButtonTapped(_ sender: UIBarButtonItem) {
         
@@ -161,10 +160,5 @@ class EmotionCountViewController: UIViewController {
         
         // 4. 띄우기
         present(alert, animated: true)
-        
-        
-        
-
     }
-    
 }
