@@ -29,16 +29,14 @@ class LEDBoardViewController: UIViewController {
         upperView.layer.cornerRadius = 10
         upperView.backgroundColor = .white
         
-        // 텍스트필드의 테두리를 없애기 위한 작업 -> 오래걸림;;
+        // 텍스트필드의 테두리를 없애기 위한 작업 -> 오래걸림
+        // borderStyle을 .none으로 해준다는 거 기억하기
         mainTextField.borderStyle = .none
         mainTextField.textColor = .red
-        
-        
-
-
     }
     
-    /* 디자인함수 */
+    
+    /* 초기 디자인함수 */
     // 레이블
     func designMainLabel(_ sender: UILabel) {
         sender.text = "Hello Swift"
@@ -47,6 +45,7 @@ class LEDBoardViewController: UIViewController {
         sender.font = UIFont.boldSystemFont(ofSize: 40)
         sender.numberOfLines = 0
     }
+    
     // 버튼
     func designButton(_ sender: UIButton, name: String) {
         
@@ -65,6 +64,7 @@ class LEDBoardViewController: UIViewController {
     }
     
     
+    
     /* 기능 함수 */
     // 보내기 버튼 - 키보드 내려가기, 레이블 띄워주기
     @IBAction func sendButtonTapped(_ sender: UIButton) {
@@ -77,12 +77,13 @@ class LEDBoardViewController: UIViewController {
     
     // 리턴키 - 키보드 내려가기, 레이블 띄워주기
     @IBAction func keyboardReturnTapped(_ sender: UITextField) {    // Did End On Exit
-        // 키보드 내려가기
-        view.endEditing(true)
+        // 키보드 내려가기 (자동 구현)
+        // view.endEditing(true)
         
         // 레이블 띄워주기
         mainLabel.text = mainTextField.text
     }
+    
     
     // 배경 선택 시 - 키보드 내려가기 or 상단 뷰 토글
     @IBAction func backgroundTapGesture(_ sender: UITapGestureRecognizer) {
@@ -98,6 +99,7 @@ class LEDBoardViewController: UIViewController {
         }
         
     }
+    
     
     // 텍스트 컬러 버튼 누르면 색깔 랜덤으로 변경 -> textfield, 버튼, 레이블
     @IBAction func colorButtonTapped(_ sender: UIButton) {

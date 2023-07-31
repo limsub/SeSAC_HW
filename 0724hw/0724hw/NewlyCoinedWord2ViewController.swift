@@ -107,7 +107,6 @@ class NewlyCoinedWord2ViewController: UIViewController {
         tagButton2.setTitle(randomKeys[1], for: .normal)
         tagButton3.setTitle(randomKeys[2], for: .normal)
         tagButton4.setTitle(randomKeys[3], for: .normal)
-        
     }
     
     // 올바르지 않은 단어가 입력되었을 때 alert 팝업 창

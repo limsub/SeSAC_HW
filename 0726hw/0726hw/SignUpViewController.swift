@@ -233,8 +233,6 @@ class SignUpViewController: UIViewController {
         default :
             break;
         }
-        
-        
     }
     
     

@@ -40,13 +40,4 @@ class MovieListTableViewCell: UITableViewCell {
         likeButton.setImage(UIImage(systemName:
                                         (row.like) ? "star.fill" : "star"), for: .normal)
     }
-    
-    
-    
-    @IBAction func likeButtonTapped(_ sender: UIButton) {
-        
-        //data[sender.tag].like
-        
-    }
-    
 }

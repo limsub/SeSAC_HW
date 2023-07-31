@@ -24,43 +24,35 @@ import UIKit
 
 
 
+
+// 스크린 상태
+// 전체 / 즐겨찾기
 enum screenType: Int {
     case all
     case like
 }
 
 
-
 class MovieListTableViewController: UITableViewController {
     
-    var data = MovieInfo()
-    var fullList: [Movie] = []
-    var likeList: [Movie] = []
     
-    // 사용하는 배열 : MovieInfo (struct)의 movie. [Movie]
-    // 섹션 개수 : 1
-    // 셀 개수 : MovieInfo.movie.count
+    var data = MovieInfo()          // 초기 데이터 선언
+    var fullList: [Movie] = []      // 전체 영화 리스트
+    var likeList: [Movie] = []      // 즐겨찾기 영화 리스트
     
-    
-    //var data = MovieInfo()
-    
-    // 즐겨찾기 한 애들의 index 번호만 저장하려고 했는데 tag때문에 꼬일 것 같아서
-    // 그냥 통으로 Movie 타입으로 저장해버린다
-    //var likeList: [Int] = []    // movie의 인덱스 번호를 저장한다
-    
-    
-    var screen = screenType.all.rawValue      // 0 : 전체 / 1 : 즐겨찾기
+    var screen = screenType.all.rawValue      // 현재 스크린 상태 (초기값 = 0)
     
     @IBOutlet var pullDownButton: UIBarButtonItem!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        designPullDownButton(pullDownButton)
+        designPullDownButton(pullDownButton)    // pull down button 디자인
         
         
-        // 각 배열 초기화
+        // 전체/즐겨찾기 영화 리스트 초기화
+        // fullList는 여기서 data를 통해 초기화 하고 끝
+        // likeList는 앞으로 makeLikeList() 함수에서 fullList를 통해 초기화 계속 할 예정
         for i in data.movie {
             fullList.append(i)
             
@@ -82,6 +74,7 @@ class MovieListTableViewController: UITableViewController {
         // MovieListTableViewCell 클래스의 함수를 사용하기 위해 타입 캐스팅
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieListTableViewCell.identifier) as! MovieListTableViewCell
         
+        // 스크린에 따라 다른 배열 적용
         if ( screen == 0 ) {
             cell.designCell(fullList[indexPath.row])
             cell.likeButton.tag = indexPath.row
@@ -92,21 +85,6 @@ class MovieListTableViewController: UITableViewController {
             cell.likeButton.tag = indexPath.row
             cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         }
-        
-        
-        
-        
-//        // 몇 번째인지 -> indexPath.row                  <Int>
-//        // 어떤 영화인지 -> data.movie[indexPath.row]     <Movie>
-//        cell.designCell(movies[indexPath.row])
-//
-//
-//
-//        // 태그 버튼을 indexPath.row로 지정
-//        cell.likeButton.tag = indexPath.row
-//        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
-        
-        
         
         return cell
     }
@@ -141,11 +119,7 @@ class MovieListTableViewController: UITableViewController {
     
     // pull down button design
     func designPullDownButton(_ sender: UIBarButtonItem) {
-        
-        // 현재 선택된 옵션을 레이블에 띄워준다
-        //sender.setTitle(option, for: .normal)
-        
-        
+
         let op1 = UIAction(title: "전체") { _ in
             self.screen = screenType.all.rawValue
             self.tableView.reloadData()
