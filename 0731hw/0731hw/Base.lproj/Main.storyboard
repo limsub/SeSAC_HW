@@ -68,22 +68,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg2-GE-xed">
-                                <rect key="frame" x="50" y="109" width="293" height="659"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R1x-Yh-e9l">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uWG-X4-o2K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uWG-X4-o2K" firstAttribute="bottom" secondItem="Cg2-GE-xed" secondAttribute="bottom" constant="50" id="0FN-RF-fQR"/>
-                            <constraint firstItem="Cg2-GE-xed" firstAttribute="leading" secondItem="uWG-X4-o2K" secondAttribute="leading" constant="50" id="8SP-B6-pTy"/>
-                            <constraint firstItem="uWG-X4-o2K" firstAttribute="trailing" secondItem="Cg2-GE-xed" secondAttribute="trailing" constant="50" id="V1j-cr-p5B"/>
-                            <constraint firstItem="Cg2-GE-xed" firstAttribute="top" secondItem="uWG-X4-o2K" secondAttribute="top" constant="50" id="ou8-nQ-8dA"/>
+                            <constraint firstItem="uWG-X4-o2K" firstAttribute="bottom" secondItem="R1x-Yh-e9l" secondAttribute="bottom" id="Vm7-Jc-swg"/>
+                            <constraint firstItem="R1x-Yh-e9l" firstAttribute="leading" secondItem="uWG-X4-o2K" secondAttribute="leading" id="h4a-Jr-LKJ"/>
+                            <constraint firstItem="R1x-Yh-e9l" firstAttribute="top" secondItem="uWG-X4-o2K" secondAttribute="top" id="nhH-JB-dav"/>
+                            <constraint firstItem="uWG-X4-o2K" firstAttribute="trailing" secondItem="R1x-Yh-e9l" secondAttribute="trailing" id="pML-6j-t7l"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieTableView" destination="R1x-Yh-e9l" id="uU2-qe-5E8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrX-78-6VP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
