@@ -19,6 +19,7 @@
 		48C24F632A77BD2C0092ADF9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C24F622A77BD2C0092ADF9 /* SearchViewController.swift */; };
 		48C24F652A77BD350092ADF9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C24F642A77BD350092ADF9 /* DetailViewController.swift */; };
 		48C24F692A77C1260092ADF9 /* MoviInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C24F682A77C1260092ADF9 /* MoviInfo.swift */; };
+		48C24F6B2A77DCE20092ADF9 /* SearchForCollectionCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C24F6A2A77DCE20092ADF9 /* SearchForCollectionCellViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		48C24F622A77BD2C0092ADF9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		48C24F642A77BD350092ADF9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		48C24F682A77C1260092ADF9 /* MoviInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviInfo.swift; sourceTree = "<group>"; };
+		48C24F6A2A77DCE20092ADF9 /* SearchForCollectionCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForCollectionCellViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				48C24F4A2A77BCBB0092ADF9 /* SceneDelegate.swift */,
 				48C24F4C2A77BCBB0092ADF9 /* ViewController.swift */,
 				48C24F4E2A77BCBB0092ADF9 /* Main.storyboard */,
+				48C24F6A2A77DCE20092ADF9 /* SearchForCollectionCellViewController.swift */,
 				48C24F5C2A77BD070092ADF9 /* MovieCollectionViewController.swift */,
 				48C24F682A77C1260092ADF9 /* MoviInfo.swift */,
 				48C24F5E2A77BD160092ADF9 /* MovieCollectionViewCell.swift */,
@@ -161,6 +164,7 @@
 				48C24F632A77BD2C0092ADF9 /* SearchViewController.swift in Sources */,
 				48C24F4D2A77BCBB0092ADF9 /* ViewController.swift in Sources */,
 				48C24F5D2A77BD070092ADF9 /* MovieCollectionViewController.swift in Sources */,
+				48C24F6B2A77DCE20092ADF9 /* SearchForCollectionCellViewController.swift in Sources */,
 				48C24F602A77BD160092ADF9 /* MovieCollectionViewCell.swift in Sources */,
 				48C24F492A77BCBB0092ADF9 /* AppDelegate.swift in Sources */,
 				48C24F4B2A77BCBB0092ADF9 /* SceneDelegate.swift in Sources */,
