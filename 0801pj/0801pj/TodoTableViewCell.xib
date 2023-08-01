@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoTableViewCell" rowHeight="104" id="KGk-i7-Jjw" customClass="TodoTableViewCell" customModule="_801pj" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="415" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="on2-JP-TxZ">
+                        <rect key="frame" x="5" y="5" width="405" height="94"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7LT-7C-931">
+                                <rect key="frame" x="5" y="5" width="395" height="84"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zK2-6l-wDK">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="ZDs-co-aPM"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="brz-M4-GOc"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rqA-Zh-LWz">
+                                        <rect key="frame" x="50" y="0.0" width="295" height="84"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R1-Yu-cHc">
+                                        <rect key="frame" x="355" y="0.0" width="40" height="84"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                                        <connections>
+                                            <action selector="specialButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FxK-KW-Zoa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zK2-6l-wDK" firstAttribute="width" secondItem="0R1-Yu-cHc" secondAttribute="width" id="ch3-EC-Blg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7LT-7C-931" firstAttribute="leading" secondItem="on2-JP-TxZ" secondAttribute="leading" constant="5" id="ok5-rk-nXp"/>
+                            <constraint firstAttribute="trailing" secondItem="7LT-7C-931" secondAttribute="trailing" constant="5" id="rVS-6h-UjY"/>
+                            <constraint firstAttribute="bottom" secondItem="7LT-7C-931" secondAttribute="bottom" constant="5" id="sAl-Ts-aMi"/>
+                            <constraint firstItem="7LT-7C-931" firstAttribute="top" secondItem="on2-JP-TxZ" secondAttribute="top" constant="5" id="sKA-hc-9M3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="on2-JP-TxZ" secondAttribute="trailing" constant="5" id="1SY-po-8y0"/>
+                    <constraint firstItem="on2-JP-TxZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ilx-zw-Big"/>
+                    <constraint firstItem="on2-JP-TxZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="YXX-Jr-Yj4"/>
+                    <constraint firstAttribute="bottom" secondItem="on2-JP-TxZ" secondAttribute="bottom" constant="5" id="gzC-10-qwP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="doneButton" destination="zK2-6l-wDK" id="GxI-Fp-lVK"/>
+                <outlet property="specialButton" destination="0R1-Yu-cHc" id="cZJ-rH-tBm"/>
+                <outlet property="todoTextView" destination="rqA-Zh-LWz" id="iNe-Cm-hpF"/>
+            </connections>
+            <point key="canvasLocation" x="150.38167938931298" y="40.845070422535215"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
