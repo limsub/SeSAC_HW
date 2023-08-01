@@ -17,18 +17,35 @@ import UIKit
         // done 버튼 누르면 현재 배열에서 가장 뒤로 움직이도록 하자
     // 2 - 2. 즐겨찾기 섹션, 일반 섹션 따로 나눠서 버튼 누르면 왔다갔다 하기
 
-// 3. 데이터 추가 (pull down button, textfield, ok버튼)
-// 4. 데이터 검색 (search bar)
+//(0) 3. 데이터 추가 (pull down button, textfield, ok버튼)
+//(0) 4. 데이터 검색 (search bar)
 
-// 셀은 다른 파일에서 구현하는 연습 (XIB 파일)
+//(0) 셀은 다른 파일에서 구현하는 연습 (XIB 파일)
 // 셀 안에 레이블 말고 텍스트 뷰로 해서 수정도 가능하게 해보기
     // 여러 줄 안되게 하기
     // 엔터치면 끝
-// identifier같은건 enum으로 써보는 연습
+//(0) identifier같은건 enum으로 써보는 연습
 // 가능하면 커스텀 스와이프도 해보기
-// done이면 그냥 그 버튼은 끝 -> 버튼, textview 모두 수정 불간으
+//(0) done이면 그냥 그 버튼은 끝 -> 버튼, textview 모두 수정 불간으
 
 
+
+
+extension TodoTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let txt = searchController.searchBar.text?.lowercased() else { return }
+        
+        self.filteredList.specialList = self.list.specialList.filter{ $0.main.lowercased().contains(txt) }
+        self.filteredList.todoList = self.list.todoList.filter{
+            $0.main.lowercased().contains(txt) }
+        
+        
+        
+        self.tableView.reloadData()
+    }
+    
+    
+}
 
 
 class TodoTableViewController: UITableViewController {
@@ -40,7 +57,37 @@ class TodoTableViewController: UITableViewController {
 //            tableView.reloadData()
 //        }
     
+    var filteredList = ToDoInformation()
     
+    var isFiltering: Bool {
+        let searchController = self.navigationItem.searchController
+        let isActive = searchController?.isActive ?? false
+        let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
+        
+        print(isActive && isSearchBarHasText)
+        
+        return isActive && isSearchBarHasText
+    }
+    
+    // setup
+    func setupSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.searchController = searchController
+        
+        searchController.searchResultsUpdater = self
+    }
+    
+    func setupTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+    
+    
+    
+    
+    
+    @IBOutlet var todoSearchBar: UISearchBar!
     
     @IBOutlet var pullDownButton: UIButton!
     @IBOutlet var newTextField: UITextField!
@@ -58,6 +105,10 @@ class TodoTableViewController: UITableViewController {
         
         // pull down button 디자인
         designPullDownButton(pullDownButton)
+        
+        // setup
+        setupTableView()
+        setupSearchController()
     }
     
     // 0. 섹션 개수
@@ -72,6 +123,23 @@ class TodoTableViewController: UITableViewController {
     
     // 1. 셀 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if (section == 0) {
+            if (isFiltering) {
+                return filteredList.specialList.count
+            } else {
+                return list.specialList.count
+            }
+        }
+        else {
+            if (isFiltering) {
+                return filteredList.todoList.count
+            } else {
+                return list.todoList.count
+            }
+        }
+        
+        
         return (section == 0) ? list.specialList.count : list.todoList.count
     }
     
@@ -81,12 +149,24 @@ class TodoTableViewController: UITableViewController {
         
         
         if (indexPath.section == 0 /*&& !list.specialList.isEmpty*/) {
-            let row = list.specialList[indexPath.row]  // type : ToDo
-            cell.designCell(row)
+            if (isFiltering) {
+                let row = filteredList.specialList[indexPath.row]  // type : ToDo
+                cell.designCell(row)
+            }
+            else {
+                let row = list.specialList[indexPath.row]  // type : ToDo
+                cell.designCell(row)
+            }
         }
         else if (indexPath.section == 1 /*&& !list.todoList.isEmpty*/ ){
-            let row = list.todoList[indexPath.row]
-            cell.designCell(row)
+            if (isFiltering) {
+                let row = filteredList.todoList[indexPath.row]
+                cell.designCell(row)
+            }
+            else {
+                let row = list.todoList[indexPath.row]
+                cell.designCell(row)
+            }
         }
         
         
