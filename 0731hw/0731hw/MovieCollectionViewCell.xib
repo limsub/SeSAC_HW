@@ -36,11 +36,18 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fut-hl-i8N">
                                 <rect key="frame" x="80" y="40" width="121" height="159"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g0-wg-dnt">
+                                <rect key="frame" x="177" y="10" width="24" height="14"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="uE9-o4-jfs" secondAttribute="bottom" constant="10" id="1Jk-vb-Ra6"/>
+                            <constraint firstItem="2g0-wg-dnt" firstAttribute="top" secondItem="uVq-6R-NVB" secondAttribute="top" constant="10" id="7Jn-YX-Yn8"/>
                             <constraint firstItem="LRp-pm-8HP" firstAttribute="top" secondItem="uVq-6R-NVB" secondAttribute="top" constant="10" id="GbR-yH-ajK"/>
+                            <constraint firstAttribute="trailing" secondItem="2g0-wg-dnt" secondAttribute="trailing" constant="10" id="JVe-hA-kSV"/>
                             <constraint firstItem="fut-hl-i8N" firstAttribute="leading" secondItem="uVq-6R-NVB" secondAttribute="leading" constant="80" id="MZU-8a-6Nf"/>
                             <constraint firstAttribute="bottom" secondItem="fut-hl-i8N" secondAttribute="bottom" constant="10" id="QG5-wW-sqg"/>
                             <constraint firstItem="uE9-o4-jfs" firstAttribute="leading" secondItem="uVq-6R-NVB" secondAttribute="leading" constant="10" id="UJX-W4-3os"/>
@@ -61,6 +68,7 @@
             <size key="customSize" width="221" height="219"/>
             <connections>
                 <outlet property="backView" destination="uVq-6R-NVB" id="Zsn-Li-0Ip"/>
+                <outlet property="heartButton" destination="2g0-wg-dnt" id="F98-AQ-y1j"/>
                 <outlet property="posterImageView" destination="fut-hl-i8N" id="k7I-Ug-hIy"/>
                 <outlet property="rateLabel" destination="uE9-o4-jfs" id="Je9-Wq-ohq"/>
                 <outlet property="titleLabel" destination="LRp-pm-8HP" id="gFo-5W-xkg"/>

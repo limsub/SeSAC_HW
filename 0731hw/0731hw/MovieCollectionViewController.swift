@@ -13,7 +13,7 @@ class MovieCollectionViewController: UICollectionViewController {
     // 셀 identifier : MovieCollectionViewCell
     
     // data 모음
-    let data = MovieInfo().movie
+    var data = MovieInfo().movie
     let id = "MovieCollectionViewCell"
     
     override func viewDidLoad() {
@@ -72,6 +72,7 @@ class MovieCollectionViewController: UICollectionViewController {
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         vc.content = data[indexPath.row].title
+        vc.aboutMovie = data[indexPath.row]
         
         // 3. 화면 전환 방식 설정
         
@@ -96,10 +97,20 @@ class MovieCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as! MovieCollectionViewCell
         
-        cell.designCell(data[indexPath.row].title, String(data[indexPath.row].rate))
+        cell.designCell(data[indexPath.row].title, String(data[indexPath.row].rate), data[indexPath.row].like)
+        
+        // heart button
+        cell.heartButton.tag = indexPath.row
+        cell.heartButton.addTarget(self, action: #selector(heartButtonTapped), for: .touchUpInside)
         
 
         return cell
+    }
+    
+    @objc
+    func heartButtonTapped(_ sender: UIButton) {
+        data[sender.tag].like.toggle()
+        collectionView.reloadData()
     }
     
     

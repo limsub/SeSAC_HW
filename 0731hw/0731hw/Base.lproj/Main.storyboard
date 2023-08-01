@@ -160,6 +160,9 @@
                             <constraint firstItem="UNO-hP-Izk" firstAttribute="trailing" secondItem="jh9-BD-ySO" secondAttribute="trailing" constant="50" id="xu0-0R-4rI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aboutMovieLabel" destination="jh9-BD-ySO" id="F9o-cl-PJZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AZ-XG-Aou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

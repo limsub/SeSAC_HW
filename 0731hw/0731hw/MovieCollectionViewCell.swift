@@ -14,8 +14,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var posterImageView: UIImageView!
+    @IBOutlet var heartButton: UIButton!
     
-    func designCell(_ title: String, _ rate: String) {
+    
+    func designCell(_ title: String, _ rate: String, _ like: Bool) {
         
         // 배경 색 랜덤
         // drand48() : [0.0, 1.0) 사이의 값을 반환
@@ -32,6 +34,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
         titleLabel.text = title
         rateLabel.text = rate
         posterImageView.image = UIImage(named: title)
+        
+        // heart 버튼
+        heartButton.setImage(UIImage(systemName: (like) ? "heart.fill" : "heart"), for: .normal)
         
     }
 
