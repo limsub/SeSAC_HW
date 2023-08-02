@@ -38,7 +38,9 @@ class BookViewController: UIViewController, UITableViewDelegate, UITableViewData
     var data = MovieInfo().movie
     
     
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "요즘 인기 작품"
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -90,7 +92,12 @@ class BookViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            }
             self?.bookCollectionView.reloadData()
             self?.bookTableView.reloadData()
+            
+            
+            self?.configureCollectionViewLayout()
+
         }
+        
         
         return cell
     }
@@ -146,7 +153,7 @@ class BookViewController: UIViewController, UITableViewDelegate, UITableViewData
     func configureCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 100, height : (data.filter{ $0.like }.count == 0 ? 0 : 180))
+        layout.itemSize = CGSize(width: 100, height : 150)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
         bookCollectionView.collectionViewLayout = layout
