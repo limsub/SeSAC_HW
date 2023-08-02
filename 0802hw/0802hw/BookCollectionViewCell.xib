@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCollectionViewCell" id="gTV-IL-0wX" customClass="BookCollectionViewCell" customModule="_802hw" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="525"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="399" height="525"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u0S-cM-fuM">
+                        <rect key="frame" x="2" y="2" width="395" height="521"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anN-kB-RgB">
+                        <rect key="frame" x="332" y="19.999999999999996" width="62" height="42.666666666666657"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="24"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="heartButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Y70-ON-RaH"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="u0S-cM-fuM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="4C7-dN-dXO"/>
+                <constraint firstAttribute="bottom" secondItem="u0S-cM-fuM" secondAttribute="bottom" constant="2" id="F9t-FI-SAB"/>
+                <constraint firstItem="u0S-cM-fuM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="JY4-iZ-Ikl"/>
+                <constraint firstItem="anN-kB-RgB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="Uhx-X0-QMc"/>
+                <constraint firstAttribute="trailing" secondItem="anN-kB-RgB" secondAttribute="trailing" constant="5" id="esp-tv-3oC"/>
+                <constraint firstAttribute="trailing" secondItem="u0S-cM-fuM" secondAttribute="trailing" constant="2" id="no2-8S-eMX"/>
+            </constraints>
+            <size key="customSize" width="333" height="445"/>
+            <connections>
+                <outlet property="heartButton" destination="anN-kB-RgB" id="1Qb-AE-rTv"/>
+                <outlet property="posterImageView" destination="u0S-cM-fuM" id="kbn-94-bT0"/>
+            </connections>
+            <point key="canvasLocation" x="-229.7709923664122" y="-1.0563380281690142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+    </resources>
+</document>
