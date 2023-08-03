@@ -144,8 +144,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="csG-kl-T4N">
+                                <rect key="frame" x="50" y="89" width="293" height="628.66666666666663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상세 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jh9-BD-ySO">
-                                <rect key="frame" x="50" y="109" width="293" height="659"/>
+                                <rect key="frame" x="50" y="747.66666666666663" width="293" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -153,18 +160,31 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UNO-hP-Izk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="jh9-BD-ySO" firstAttribute="leading" secondItem="UNO-hP-Izk" secondAttribute="leading" constant="50" id="aqO-EZ-6nc"/>
-                            <constraint firstItem="UNO-hP-Izk" firstAttribute="bottom" secondItem="jh9-BD-ySO" secondAttribute="bottom" constant="50" id="qkW-VX-GZB"/>
-                            <constraint firstItem="jh9-BD-ySO" firstAttribute="top" secondItem="UNO-hP-Izk" secondAttribute="top" constant="50" id="ryD-Yd-mVn"/>
-                            <constraint firstItem="UNO-hP-Izk" firstAttribute="trailing" secondItem="jh9-BD-ySO" secondAttribute="trailing" constant="50" id="xu0-0R-4rI"/>
+                            <constraint firstItem="jh9-BD-ySO" firstAttribute="leading" secondItem="UNO-hP-Izk" secondAttribute="leading" constant="50" id="4Go-8k-kgH"/>
+                            <constraint firstItem="jh9-BD-ySO" firstAttribute="top" secondItem="csG-kl-T4N" secondAttribute="bottom" constant="30" id="NSD-ZC-qUT"/>
+                            <constraint firstItem="UNO-hP-Izk" firstAttribute="bottom" secondItem="jh9-BD-ySO" secondAttribute="bottom" constant="50" id="Ow0-yt-Bbc"/>
+                            <constraint firstItem="csG-kl-T4N" firstAttribute="leading" secondItem="UNO-hP-Izk" secondAttribute="leading" constant="50" id="YaD-vd-qpM"/>
+                            <constraint firstItem="UNO-hP-Izk" firstAttribute="trailing" secondItem="csG-kl-T4N" secondAttribute="trailing" constant="50" id="dMG-uU-2h2"/>
+                            <constraint firstItem="UNO-hP-Izk" firstAttribute="trailing" secondItem="jh9-BD-ySO" secondAttribute="trailing" constant="50" id="fEP-sC-ZqH"/>
+                            <constraint firstItem="csG-kl-T4N" firstAttribute="top" secondItem="UNO-hP-Izk" secondAttribute="top" constant="30" id="tWX-Py-bR5"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="W4B-Ln-46V" appends="YES" id="BVX-0M-qBO"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="aboutMovieLabel" destination="jh9-BD-ySO" id="F9o-cl-PJZ"/>
+                        <outlet property="contentTextView" destination="csG-kl-T4N" id="7we-x3-gFR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AZ-XG-Aou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="W4B-Ln-46V">
+                    <connections>
+                        <action selector="tapGesture:" destination="zYU-XA-n66" id="n9H-ES-EBq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3057" y="759"/>
         </scene>
@@ -188,6 +208,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
