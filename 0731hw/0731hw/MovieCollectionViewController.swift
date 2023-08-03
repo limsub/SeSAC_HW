@@ -97,7 +97,7 @@ class MovieCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as! MovieCollectionViewCell
         
-        cell.designCell(data[indexPath.row].title, String(data[indexPath.row].rate), data[indexPath.row].like)
+        cell.designCell(data[indexPath.row].title, String(data[indexPath.row].rate), data[indexPath.row].like, data[indexPath.row].backColor)
         
         // heart button
         cell.heartButton.tag = indexPath.row

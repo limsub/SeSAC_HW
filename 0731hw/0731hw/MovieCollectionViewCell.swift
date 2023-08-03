@@ -17,15 +17,15 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet var heartButton: UIButton!
     
     
-    func designCell(_ title: String, _ rate: String, _ like: Bool) {
+    func designCell(_ title: String, _ rate: String, _ like: Bool, _ backColor: UIColor) {
         
-        // 배경 색 랜덤
-        // drand48() : [0.0, 1.0) 사이의 값을 반환
-        let rRed = CGFloat(drand48())
-        let rGreen = CGFloat(drand48())
-        let rBlue = CGFloat(drand48())
-        let setColor = UIColor(red: rRed, green: rGreen, blue: rBlue, alpha: 1.0)
-        backView.backgroundColor = setColor
+//        // 배경 색 랜덤
+//        // drand48() : [0.0, 1.0) 사이의 값을 반환
+//        let rRed = CGFloat(drand48())
+//        let rGreen = CGFloat(drand48())
+//        let rBlue = CGFloat(drand48())
+//        let setColor = UIColor(red: rRed, green: rGreen, blue: rBlue, alpha: 1.0)
+        backView.backgroundColor = backColor
         
         // 배경 라운드
         backView.layer.cornerRadius = 20

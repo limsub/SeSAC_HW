@@ -11,7 +11,7 @@ class DetailViewController: UIViewController {
 
     var content: String = ""
     
-    var aboutMovie: Movie = Movie(title: "", releaseDate: "", runtime: 0, overview: "", rate: 0, like: false)
+    var aboutMovie: Movie = Movie(title: "", releaseDate: "", runtime: 0, overview: "", rate: 0, like: false, backColor : MovieInfo.randomColor())
     
     
     

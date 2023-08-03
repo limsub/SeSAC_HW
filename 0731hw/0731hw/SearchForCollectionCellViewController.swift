@@ -15,10 +15,10 @@ extension SearchForCollectionCellViewController: UICollectionViewDelegate, UICol
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.id, for: indexPath) as! MovieCollectionViewCell
         
         if self.isFiltering {
-            cell.designCell(filteredArr[indexPath.row].title, String(filteredArr[indexPath.row].rate), filteredArr[indexPath.row].like)
+            cell.designCell(filteredArr[indexPath.row].title, String(filteredArr[indexPath.row].rate), filteredArr[indexPath.row].like, arr[indexPath.row].backColor)
         }
         else {
-            cell.designCell(arr[indexPath.row].title, String(arr[indexPath.row].rate), arr[indexPath.row].like)
+            cell.designCell(arr[indexPath.row].title, String(arr[indexPath.row].rate), arr[indexPath.row].like, arr[indexPath.row].backColor)
         }
 
         return cell
