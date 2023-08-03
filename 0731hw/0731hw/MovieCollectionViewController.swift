@@ -7,6 +7,13 @@
 
 import UIKit
 
+// 8/3 homework
+// 1. 검색 기능 추가하기
+// 2. 상세화면에 placeholder 구현하기
+
+
+
+
 
 class MovieCollectionViewController: UICollectionViewController {
 
@@ -16,10 +23,21 @@ class MovieCollectionViewController: UICollectionViewController {
     var data = MovieInfo().movie
     let id = "MovieCollectionViewCell"
     
+    // 8/3 hw
+    var searchData: [Movie] = []
+    let searchBar = UISearchBar()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "영화 책장"
+        // 8/3 hw
+        searchBar.delegate = self
+        searchBar.placeholder = "검색어를 입력하세요"
+        searchBar.showsCancelButton = true
+        navigationItem.titleView = searchBar
+        
+        //title = "영화 책장"
         
         // 등록
         let nib = UINib(nibName: id, bundle: nil)
@@ -90,14 +108,14 @@ class MovieCollectionViewController: UICollectionViewController {
     
     // 1. 셀 개수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return searchData.count
     }
     
     // 2. 셀 디자인
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as! MovieCollectionViewCell
         
-        cell.designCell(data[indexPath.row].title, String(data[indexPath.row].rate), data[indexPath.row].like, data[indexPath.row].backColor)
+        cell.designCell(searchData[indexPath.row].title, String(searchData[indexPath.row].rate), searchData[indexPath.row].like, searchData[indexPath.row].backColor)
         
         // heart button
         cell.heartButton.tag = indexPath.row
@@ -109,7 +127,7 @@ class MovieCollectionViewController: UICollectionViewController {
     
     @objc
     func heartButtonTapped(_ sender: UIButton) {
-        data[sender.tag].like.toggle()
+        searchData[sender.tag].like.toggle()
         collectionView.reloadData()
     }
     
@@ -129,4 +147,39 @@ class MovieCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = layout
     }
     
+}
+
+
+// 8/3 hw
+extension MovieCollectionViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchData.removeAll()
+        
+        for item in data {
+            if item.title.contains(searchBar.text!) {
+                searchData.append(item);
+            }
+        }
+        
+        collectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchData.removeAll()
+        collectionView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchData.removeAll()
+        
+        for item in data {
+            if item.title.contains(searchBar.text!) {
+                searchData.append(item)
+            }
+        }
+        
+        collectionView.reloadData()
+    }
 }
