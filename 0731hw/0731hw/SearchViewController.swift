@@ -44,7 +44,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UISe
         
         
         self.movieTableView.reloadData()
-        
     }
 }
 
@@ -79,14 +78,14 @@ class SearchViewController: UIViewController {
             arr.append(m.title)
         }
 
-        title = "검색 화면"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "xmark"),
-            style: .plain,
-            target: self,
-            action: #selector(closeButtonTapped)
-        )
-        navigationItem.leftBarButtonItem?.tintColor = .black
+//        title = "검색 화면"
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(
+//            image: UIImage(systemName: "xmark"),
+//            style: .plain,
+//            target: self,
+//            action: #selector(closeButtonTapped)
+//        )
+//        navigationItem.leftBarButtonItem?.tintColor = .black
         
         
         
@@ -104,11 +103,13 @@ class SearchViewController: UIViewController {
         // text가 업데이트될 때마다 불리는 메소드
         searchController.searchResultsUpdater = self
     }
+    
     // set up tableview
     func setupTableView() {
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self
     }
+    
     
     @objc
     func closeButtonTapped() {

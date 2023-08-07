@@ -30,6 +30,14 @@ import UIKit
 
 
 
+// 기능 정리
+// 1. done 버튼 - 누르면 해당 섹션의 맨 아래로 이동. 더이상 수정 불가
+// 2. star 버튼 - 선택o면 '즐겨찾기' 섹션으로 이동. 선택x면 '일반' 섹션으로 이동
+// 3. textField - 텍스트 입력 후 return/ok버튼 누르면 리스트 추가. 왼쪽 pull down button으로 섹션 구분
+// 4. searchBar - 텍스트 입력할 때마다 해당 텍스트 포함한 리스트 아래에 출력. 두 섹션 모두 적용
+
+
+
 
 extension TodoTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
@@ -50,15 +58,10 @@ extension TodoTableViewController: UISearchResultsUpdating {
 
 class TodoTableViewController: UITableViewController {
     
-    // 투두 리스트 (즐겨찾기, 일반 따로) -> 하나의 클래스에 만듬
-    var list = ToDoInformation()
-        // 얜 뭐지...
-//        didSet {
-//            tableView.reloadData()
-//        }
+    var list = ToDoInformation()            // 전체 리스트
+    var filteredList = ToDoInformation()    // 검색 시 나타나는 리스트
     
-    var filteredList = ToDoInformation()
-    
+    // 현재 필터링이 필요한지 (즉, 검색중인지) 확인하는 함수
     var isFiltering: Bool {
         let searchController = self.navigationItem.searchController
         let isActive = searchController?.isActive ?? false
@@ -69,7 +72,7 @@ class TodoTableViewController: UITableViewController {
         return isActive && isSearchBarHasText
     }
     
-    // setup
+    // 프로토콜 setup
     func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         self.navigationItem.searchController = searchController
@@ -83,16 +86,11 @@ class TodoTableViewController: UITableViewController {
     }
     
     
-    
-    
-    
-    
-    @IBOutlet var todoSearchBar: UISearchBar!
-    
     @IBOutlet var pullDownButton: UIButton!
     @IBOutlet var newTextField: UITextField!
     @IBOutlet var okButton: UIButton!
     
+    // pull down button의 상태
     var option = Option.일반.rawValue
 
 
@@ -106,7 +104,7 @@ class TodoTableViewController: UITableViewController {
         // pull down button 디자인
         designPullDownButton(pullDownButton)
         
-        // setup
+        // 프로토콜 setup
         setupTableView()
         setupSearchController()
     }
@@ -138,9 +136,6 @@ class TodoTableViewController: UITableViewController {
                 return list.todoList.count
             }
         }
-        
-        
-        return (section == 0) ? list.specialList.count : list.todoList.count
     }
     
     // 2. 셀 데이터 및 디자인
@@ -169,12 +164,8 @@ class TodoTableViewController: UITableViewController {
             }
         }
         
-        
-        
-        
         // 버튼 기능 (섹션 구분을 어떻게 해줘야 할까) -> 클로저를 이용하는 방법
-        // 문제는, 얘가 먼저 실행되고 위에 애들이 실행되기 때문에, indexPath.row 부분에서 문제가 생긴다 <- 수동으로 작업해주자 (나중에 질문하기)
-        // 1. done Button
+        // 1. done Button (해당 배열에서 remove 후, 맨 뒤에 다시 insert)
         cell.doneCallBackMethod = { [weak self] in
             
             // 누르는것만 작동하게 할거다. 취소 불가능
@@ -200,7 +191,7 @@ class TodoTableViewController: UITableViewController {
             tableView.reloadData()
         }
         
-        // 2. special Button (indexPath.section
+        // 2. special Button (해당 배열에서 remove 후, 다른 배열에 insert)
         // 이미 done이면 이것도 작동 못함
         cell.specialCallBackMethod = { [weak self] in
 
@@ -256,7 +247,7 @@ class TodoTableViewController: UITableViewController {
         sender.menu = buttonMenu
     }
     
-    // check textfield
+    // check textfield (textfield에 입력이 올바른지 확인)
     func checkTextField(_ sender: UITextField) -> Bool {
         if let txt = sender.text {
             if txt.count >= 1 {
@@ -288,6 +279,7 @@ class TodoTableViewController: UITableViewController {
                 
             }
         }
+        // 텍스트가 제대로 입력되지 않았으면 alert
         else {
             let alert = UIAlertController(title: "텍스트가 올바르지 않습니다", message: "다시 써주세요", preferredStyle: .alert)
             let ok = UIAlertAction(title: "확인", style: .default)
@@ -297,7 +289,7 @@ class TodoTableViewController: UITableViewController {
 
     }
     
-    
+    // return or ok버튼이 눌리면 리스트 업데이트
     @IBAction func textfieldReturnTapped(_ sender: UITextField) {
         updateList()
     }
@@ -306,7 +298,4 @@ class TodoTableViewController: UITableViewController {
         updateList()
         view.endEditing(true)
     }
-    
-    
-    
 }

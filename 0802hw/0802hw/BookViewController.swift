@@ -28,16 +28,21 @@ import UIKit
     // 근데 매번 filter 쓰는 게 낫냐 아니면 배열 하나 만들어서 그거 쓰는게 낫냐
 
 
+// 기능 정리
+// 1. 위는 collectionView, 아래는 tableView
+// 2. tableView의 헤더에 collectionView
+// 3. tableView에는 모든 데이터, collectionView에는 좋아요 누른 데이터
+
 class BookViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     @IBOutlet var bookCollectionView: UICollectionView!
     @IBOutlet var bookTableView: UITableView!
     
-    
+    // 데이터 저장
     var data = MovieInfo().movie
     
-    
+    /* tableView */
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "요즘 인기 작품"
     }
@@ -46,10 +51,12 @@ class BookViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.BookTableViewCell.rawValue) as! BookTableViewCell
         
         cell.designCell(data[indexPath.row])
         
+        // (tableView) 좋아요 버튼을 눌렀을 때 -> data의 해당 요소 toggle
         cell.heartCallBackMethod = { [weak self] in
             self?.data[indexPath.row].like.toggle()
             
@@ -60,8 +67,9 @@ class BookViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    /* collectionView */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.filter { $0.like }.count
+        return data.filter { $0.like }.count    // filter 이용
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -74,8 +82,9 @@ class BookViewController: UIViewController, UITableViewDelegate, UITableViewData
             // 현재 여기 있는 애들은 filter를 거쳐서 나온 새로운 배열.
             // 여기서의 indexPath로 기존 배열에 접근해야 하는데 불가능
             
-            // 일단 방법 1. 현재 요소의 제목을 따로 저장해서 기존 배열에 맞는 제목을 검색해서 찾음...
+            // 일단 방법 1. 현재 요소의 제목을 따로 저장해서 기존 배열에 맞는 제목을 검색해서 찾음... (시간적으로 아주 비효율적)
             // struct 끼리도 == 연산 사용 가능한가?
+            
             let title = self?.data.filter{ $0.like }[indexPath.row].title // 아직 좋아요가 토글되기 전 좋아요 배열에서 해당 영화의 타이틀
             
             for i in 0...(self?.data.count)! - 1 {
@@ -90,18 +99,18 @@ class BookViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                    m.like.toggle()
 //                }
 //            }
+            // 이렇게 하면 아무 의미없는 코드가 되어버림;;
+            
+            
             self?.bookCollectionView.reloadData()
             self?.bookTableView.reloadData()
             
-            
             self?.configureCollectionViewLayout()
-
         }
-        
-        
         return cell
     }
     
+    // 셀 선택 시 상세화면으로
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 1 + 2. 같은 스토리보드 내 뷰컨
         let vc = storyboard?.instantiateViewController(withIdentifier: Cell.DetailViewController.rawValue) as! DetailViewController
@@ -131,12 +140,14 @@ class BookViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 등록
         let nib = UINib(nibName: Cell.BookTableViewCell.rawValue, bundle: nil)
         bookTableView.register(nib, forCellReuseIdentifier: Cell.BookTableViewCell.rawValue)
         
         let nib2 = UINib(nibName: Cell.BookCollectionViewCell.rawValue, bundle: nil)
         bookCollectionView.register(nib2, forCellWithReuseIdentifier: Cell.BookCollectionViewCell.rawValue)
         
+        // 프로토콜 연결
         bookCollectionView.dataSource = self
         bookCollectionView.delegate = self
         
@@ -158,6 +169,4 @@ class BookViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         bookCollectionView.collectionViewLayout = layout
     }
-
-
 }

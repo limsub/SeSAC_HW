@@ -69,7 +69,7 @@ class MovieCollectionViewController: UICollectionViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         // 2. 뷰컨 찾기
-        let vc = sb.instantiateViewController(withIdentifier: "SearchForCollectionCellViewController")
+        let vc = sb.instantiateViewController(withIdentifier: "SearchViewController")
         
         // 2 - 1. navigation 상태로 present
         let nav = UINavigationController(rootViewController: vc)

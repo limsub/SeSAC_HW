@@ -44,6 +44,4 @@ class BookTableViewCell: UITableViewCell {
     @IBAction func heartButtonTapped(_ sender: UIButton) {
         heartCallBackMethod?()
     }
-    
-    
 }
