@@ -22,6 +22,7 @@
 		48F07EDD2A820E25004ECDFB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 48F07EDC2A820E25004ECDFB /* SwiftyJSON */; };
 		48F07EDF2A8210F5004ECDFB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 48F07EDE2A8210F5004ECDFB /* .gitignore */; };
 		48F07EE12A821124004ECDFB /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F07EE02A821124004ECDFB /* APIKey.swift */; };
+		48F07EEB2A82314F004ECDFB /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F07EEA2A82314F004ECDFB /* LottoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		48F07ED32A820D9C004ECDFB /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		48F07EDE2A8210F5004ECDFB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		48F07EE02A821124004ECDFB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		48F07EEA2A82314F004ECDFB /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		48F07EB82A820A9A004ECDFB /* 0808hw */ = {
 			isa = PBXGroup;
 			children = (
+				48F07EEA2A82314F004ECDFB /* LottoViewController.swift */,
 				48F07EDE2A8210F5004ECDFB /* .gitignore */,
 				48F07EB92A820A9A004ECDFB /* AppDelegate.swift */,
 				48F07EBB2A820A9A004ECDFB /* SceneDelegate.swift */,
@@ -179,6 +182,7 @@
 				48F07ED42A820D9C004ECDFB /* About.swift in Sources */,
 				48F07ECE2A820B24004ECDFB /* KaKaoBookViewController.swift in Sources */,
 				48F07ED12A820B44004ECDFB /* KakaoBookTableViewCell.swift in Sources */,
+				48F07EEB2A82314F004ECDFB /* LottoViewController.swift in Sources */,
 				48F07EBA2A820A9A004ECDFB /* AppDelegate.swift in Sources */,
 				48F07EBC2A820A9A004ECDFB /* SceneDelegate.swift in Sources */,
 			);
