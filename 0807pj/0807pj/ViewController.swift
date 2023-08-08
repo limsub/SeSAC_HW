@@ -16,17 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet var beerImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
-    
-    
+    @IBOutlet var updateButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameLabel.numberOfLines = 0
         descriptionLabel.numberOfLines = 0
     
-        
-        
+        callRequest()
+    }
+    
+    @IBAction func updateButtonTapped(_ sender: UIButton) {
         callRequest()
     }
     
@@ -41,16 +43,16 @@ class ViewController: UIViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
-                
-                
                 let url = URL(string: json[0]["image_url"].stringValue)
                 
-                self.beerImageView.kf.setImage(with: url)
+                
+                if let url {
+                    self.beerImageView.kf.setImage(with: url)
+                } else {
+                    self.beerImageView.image = UIImage(systemName: "x.square")
+                }
                 self.nameLabel.text = "name : " + json[0]["name"].stringValue
                 self.descriptionLabel.text = "descripption : " + json[0]["description"].stringValue
-                
-    
-                
                 
                 
             case .failure(let error):
