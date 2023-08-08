@@ -8,7 +8,7 @@
 import UIKit
 
 struct Book {
-    var imageUrl: URL
+    var imageUrl: URL?
     var title: String
     var price: Int
     var dcPrice: Int
@@ -18,6 +18,6 @@ struct Book {
     var inCart: Bool
     
     var percent: Int {
-        return ( (price - dcPrice)/price ) * 100
+        return lroundl(( (Double(price) - Double(dcPrice))/Double(price) ) * 100)
     }
 }

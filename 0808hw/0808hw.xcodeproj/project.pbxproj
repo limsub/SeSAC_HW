@@ -21,6 +21,7 @@
 		48F07EDA2A820E1D004ECDFB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48F07ED92A820E1D004ECDFB /* Alamofire */; };
 		48F07EDD2A820E25004ECDFB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 48F07EDC2A820E25004ECDFB /* SwiftyJSON */; };
 		48F07EDF2A8210F5004ECDFB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 48F07EDE2A8210F5004ECDFB /* .gitignore */; };
+		48F07EE12A821124004ECDFB /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F07EE02A821124004ECDFB /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		48F07ED02A820B44004ECDFB /* KakaoBookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KakaoBookTableViewCell.xib; sourceTree = "<group>"; };
 		48F07ED32A820D9C004ECDFB /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		48F07EDE2A8210F5004ECDFB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		48F07EE02A821124004ECDFB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				48F07ED32A820D9C004ECDFB /* About.swift */,
 				48F07ED02A820B44004ECDFB /* KakaoBookTableViewCell.xib */,
 				48F07ECD2A820B24004ECDFB /* KaKaoBookViewController.swift */,
+				48F07EE02A821124004ECDFB /* APIKey.swift */,
 				48F07EC22A820A9C004ECDFB /* Assets.xcassets */,
 				48F07EC42A820A9C004ECDFB /* LaunchScreen.storyboard */,
 				48F07EC72A820A9C004ECDFB /* Info.plist */,
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F07EBE2A820A9A004ECDFB /* ViewController.swift in Sources */,
+				48F07EE12A821124004ECDFB /* APIKey.swift in Sources */,
 				48F07ED42A820D9C004ECDFB /* About.swift in Sources */,
 				48F07ECE2A820B24004ECDFB /* KaKaoBookViewController.swift in Sources */,
 				48F07ED12A820B44004ECDFB /* KakaoBookTableViewCell.swift in Sources */,
