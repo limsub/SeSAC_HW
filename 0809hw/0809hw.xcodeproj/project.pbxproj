@@ -16,6 +16,8 @@
 		48F07F1D2A836434004ECDFB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 48F07F1C2A836434004ECDFB /* Kingfisher */; };
 		48F07F202A83643C004ECDFB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48F07F1F2A83643C004ECDFB /* Alamofire */; };
 		48F07F232A836443004ECDFB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 48F07F222A836443004ECDFB /* SwiftyJSON */; };
+		48F07F252A836549004ECDFB /* KakaoBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F07F242A836549004ECDFB /* KakaoBookViewController.swift */; };
+		48F07F272A836BF7004ECDFB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 48F07F262A836BF7004ECDFB /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		48F07F102A836415004ECDFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F07F132A836415004ECDFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48F07F152A836415004ECDFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48F07F242A836549004ECDFB /* KakaoBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoBookViewController.swift; sourceTree = "<group>"; };
+		48F07F262A836BF7004ECDFB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +66,12 @@
 		48F07F062A836414004ECDFB /* 0809hw */ = {
 			isa = PBXGroup;
 			children = (
+				48F07F262A836BF7004ECDFB /* .gitignore */,
 				48F07F072A836414004ECDFB /* AppDelegate.swift */,
 				48F07F092A836414004ECDFB /* SceneDelegate.swift */,
 				48F07F0B2A836414004ECDFB /* ViewController.swift */,
 				48F07F0D2A836414004ECDFB /* Main.storyboard */,
+				48F07F242A836549004ECDFB /* KakaoBookViewController.swift */,
 				48F07F102A836415004ECDFB /* Assets.xcassets */,
 				48F07F122A836415004ECDFB /* LaunchScreen.storyboard */,
 				48F07F152A836415004ECDFB /* Info.plist */,
@@ -141,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F07F272A836BF7004ECDFB /* .gitignore in Resources */,
 				48F07F142A836415004ECDFB /* LaunchScreen.storyboard in Resources */,
 				48F07F112A836415004ECDFB /* Assets.xcassets in Resources */,
 				48F07F0F2A836414004ECDFB /* Main.storyboard in Resources */,
@@ -155,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F07F0C2A836414004ECDFB /* ViewController.swift in Sources */,
+				48F07F252A836549004ECDFB /* KakaoBookViewController.swift in Sources */,
 				48F07F082A836414004ECDFB /* AppDelegate.swift in Sources */,
 				48F07F0A2A836414004ECDFB /* SceneDelegate.swift in Sources */,
 			);
