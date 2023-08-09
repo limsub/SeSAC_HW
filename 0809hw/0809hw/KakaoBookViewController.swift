@@ -171,7 +171,7 @@ class KakaoBookViewController: UIViewController {
                         let thumbnail = book["thumbnail"].stringValue
                         let title = book["title"].stringValue
                         
-                        print(salePrice)
+                        //print(salePrice)
                         
                         let newBook = Book(authors: authors, datetime: datetime, price: price, publisher: publisher, salePrice: salePrice, thumbnail: thumbnail, title: title)
                         
@@ -271,6 +271,8 @@ extension KakaoBookViewController: UITableViewDelegate, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        print("===== 프리패치 \(indexPaths) =====")
+        
         for indexPath in indexPaths {
             if (bookList.count-1 == indexPath.row &&
                 pageCnt < 15 &&
