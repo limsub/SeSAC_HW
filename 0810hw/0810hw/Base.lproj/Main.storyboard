@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Tq-YS-xzb">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -77,6 +77,97 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="138" y="4"/>
+        </scene>
+        <!--Translate2 View Controller-->
+        <scene sceneID="Tqe-nv-C5u">
+            <objects>
+                <viewController storyboardIdentifier="Translate2ViewController" id="2Tq-YS-xzb" customClass="Translate2ViewController" customModule="_810hw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PPH-gU-yjv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y5p-JV-4BW">
+                                <rect key="frame" x="30" y="89" width="333" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9W1-eF-Zul"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LuO-BD-u3k">
+                                <rect key="frame" x="30" y="129.00000000000003" width="333" height="262.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVR-yp-JrD">
+                                <rect key="frame" x="30" y="421.66666666666669" width="333" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MD0-1N-YfC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tranlateButtonTapped:" destination="2Tq-YS-xzb" eventType="touchUpInside" id="Qcs-I5-b3q"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ryz-iz-qgF">
+                                <rect key="frame" x="30" y="491.66666666666669" width="333" height="34.000000000000057"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ec3-HO-rXx">
+                                <rect key="frame" x="30" y="525.66666666666663" width="333" height="262.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gzj-mP-kE3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ec3-HO-rXx" firstAttribute="height" secondItem="LuO-BD-u3k" secondAttribute="height" id="2N7-ba-hMw"/>
+                            <constraint firstItem="gzj-mP-kE3" firstAttribute="trailing" secondItem="LuO-BD-u3k" secondAttribute="trailing" constant="30" id="AB1-Ll-5W0"/>
+                            <constraint firstItem="LuO-BD-u3k" firstAttribute="leading" secondItem="gzj-mP-kE3" secondAttribute="leading" constant="30" id="Adw-tc-Ywz"/>
+                            <constraint firstItem="y5p-JV-4BW" firstAttribute="top" secondItem="gzj-mP-kE3" secondAttribute="top" constant="30" id="FnR-k3-37h"/>
+                            <constraint firstItem="gzj-mP-kE3" firstAttribute="trailing" secondItem="iVR-yp-JrD" secondAttribute="trailing" constant="30" id="Fxk-6F-6lZ"/>
+                            <constraint firstItem="gzj-mP-kE3" firstAttribute="bottom" secondItem="ec3-HO-rXx" secondAttribute="bottom" constant="30" id="G9o-WL-w6W"/>
+                            <constraint firstItem="LuO-BD-u3k" firstAttribute="top" secondItem="y5p-JV-4BW" secondAttribute="bottom" id="GIb-fb-VfG"/>
+                            <constraint firstItem="ryz-iz-qgF" firstAttribute="leading" secondItem="gzj-mP-kE3" secondAttribute="leading" constant="30" id="Ilq-tt-fuX"/>
+                            <constraint firstItem="iVR-yp-JrD" firstAttribute="top" secondItem="LuO-BD-u3k" secondAttribute="bottom" constant="30" id="PsM-OD-7i7"/>
+                            <constraint firstItem="gzj-mP-kE3" firstAttribute="trailing" secondItem="ec3-HO-rXx" secondAttribute="trailing" constant="30" id="RNs-3y-JIz"/>
+                            <constraint firstItem="ec3-HO-rXx" firstAttribute="leading" secondItem="gzj-mP-kE3" secondAttribute="leading" constant="30" id="d0l-c6-8ec"/>
+                            <constraint firstItem="iVR-yp-JrD" firstAttribute="leading" secondItem="gzj-mP-kE3" secondAttribute="leading" constant="30" id="eJY-br-dWi"/>
+                            <constraint firstItem="gzj-mP-kE3" firstAttribute="trailing" secondItem="y5p-JV-4BW" secondAttribute="trailing" constant="30" id="f2W-RU-vkQ"/>
+                            <constraint firstItem="ec3-HO-rXx" firstAttribute="top" secondItem="ryz-iz-qgF" secondAttribute="bottom" id="m2Z-g2-VQs"/>
+                            <constraint firstItem="y5p-JV-4BW" firstAttribute="height" secondItem="ryz-iz-qgF" secondAttribute="height" multiplier="1.17647" id="mLx-6n-H3M"/>
+                            <constraint firstItem="ryz-iz-qgF" firstAttribute="top" secondItem="iVR-yp-JrD" secondAttribute="bottom" constant="30" id="sEb-um-Qoz"/>
+                            <constraint firstItem="y5p-JV-4BW" firstAttribute="leading" secondItem="gzj-mP-kE3" secondAttribute="leading" constant="30" id="uFp-n2-gfg"/>
+                            <constraint firstItem="gzj-mP-kE3" firstAttribute="trailing" secondItem="ryz-iz-qgF" secondAttribute="trailing" constant="30" id="uHR-wM-loP"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cDx-eM-3Vl" appends="YES" id="aOJ-Nj-HhD"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="firstTextField" destination="y5p-JV-4BW" id="qL6-xL-zYv"/>
+                        <outlet property="firstTextView" destination="LuO-BD-u3k" id="WeS-th-l0O"/>
+                        <outlet property="secondTextField" destination="ryz-iz-qgF" id="Xj7-kx-ULO"/>
+                        <outlet property="secondTextView" destination="ec3-HO-rXx" id="kLS-AA-wSL"/>
+                        <outlet property="translateButton" destination="iVR-yp-JrD" id="gb1-a2-3Kr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMe-Bh-37a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cDx-eM-3Vl">
+                    <connections>
+                        <action selector="tapgesture:" destination="2Tq-YS-xzb" id="lGe-Oy-Qmg"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1028" y="4"/>
         </scene>
     </scenes>
     <resources>
