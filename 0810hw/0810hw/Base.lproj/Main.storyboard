@@ -31,6 +31,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="translateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kx9-t8-M0c"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sI8-Di-TFH">
                                 <rect key="frame" x="30" y="488.66666666666674" width="333" height="299.33333333333326"/>
@@ -42,6 +45,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="sI8-Di-TFH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="0al-a3-ZXf"/>
                             <constraint firstItem="xhZ-xS-nOv" firstAttribute="top" secondItem="55v-7h-KYu" secondAttribute="bottom" constant="30" id="6Vt-0a-XT2"/>
@@ -55,13 +59,22 @@
                             <constraint firstItem="xhZ-xS-nOv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="hhi-KE-LxV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sI8-Di-TFH" secondAttribute="trailing" constant="30" id="ral-Dg-NIs"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="nu4-y3-2bV" appends="YES" id="czK-8N-iTx"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="firstTextView" destination="55v-7h-KYu" id="v8h-t8-4oU"/>
                         <outlet property="secondTextView" destination="sI8-Di-TFH" id="FeA-CE-Sgj"/>
+                        <outlet property="translateButton" destination="xhZ-xS-nOv" id="zmH-PF-Fxs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nu4-y3-2bV">
+                    <connections>
+                        <action selector="tapgesture:" destination="BYZ-38-t0r" id="cfo-JG-CGY"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="138" y="4"/>
         </scene>
