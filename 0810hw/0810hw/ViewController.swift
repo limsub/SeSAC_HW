@@ -42,8 +42,8 @@ class ViewController: UIViewController {
     
     
     func translate() {
-        // 최종 url
-        let url = "https://openapi.naver.com/v1/papago/n2mt"
+        
+        guard let txt = firstTextView.text else { return }
         
         // header (HTTPHeader 아님!!)
         let header: HTTPHeaders = [
@@ -51,29 +51,76 @@ class ViewController: UIViewController {
             "X-Naver-Client-Secret" : APIKey.naverSecret
         ]
         
-        guard let txt = firstTextView.text else { return }
+        var langType = ""
         
-        // parameter
-        let parameter: Parameters = [
-            "source": "ko",
-            "target": "en",
-            "text": txt
+        
+        
+        /* ========== 언어 감지 ========== */
+        // 최종 url
+        let url2 = "https://openapi.naver.com/v1/papago/detectLangs"
+        
+        let parameter2: Parameters = [
+            "query" : txt
         ]
         
         // SwiftyJSON : Work with Alamofire
-        AF.request(url, method: .post, parameters: parameter, headers: header)
+        AF.request(url2, method: .post, parameters: parameter2, headers: header)
             .validate()
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
                     print("JSON: \(json)")
+                    langType = json["langCode"].stringValue
                     
-                    self.secondTextView.text = json["message"]["result"]["translatedText"].stringValue
+                    
+                    /* ========== 번역 작업 ========== */
+                    // 최종 url
+                    let url = "https://openapi.naver.com/v1/papago/n2mt"
+                    
+                    // header (HTTPHeader 아님!!)
+                    
+                    
+                    
+                    // parameter
+                    let parameter: Parameters = [
+                        "source": langType,
+                        "target": "en",
+                        "text": txt
+                    ]
+                    
+                    // SwiftyJSON : Work with Alamofire
+                    AF.request(url, method: .post, parameters: parameter, headers: header)
+                        .validate()
+                        .responseJSON { response in
+                            switch response.result {
+                            case .success(let value):
+                                let json = JSON(value)
+                                print("JSON: \(json)")
+                                
+                                self.secondTextView.text = json["message"]["result"]["translatedText"].stringValue
+                            case .failure(let error):
+                                print(error)
+                            }
+                        }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 case .failure(let error):
                     print(error)
                 }
             }
+
+        
+        
+        
+        
+
 
     }
 
