@@ -28,14 +28,58 @@ class MainViewController: UIViewController {
         
         mainTableView.rowHeight = 430
 
-        callRequest()
+        callRequest(callRequest2)
+    }
+    
+    func callRequest2() {
+        let url = "https://api.themoviedb.org/3/genre/movie/list"
         
+        let header: HTTPHeaders = ["Authorization" : APIKey.tmdb]
+        
+        
+        // SwiftyJSON : Work with Alamofire
+        AF.request(url, method: .get, headers: header)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("JSON22: \(json)")
+                    
+                    
+                    // 3중 loop...?
+                    for (index, movie) in self.movieList.enumerated() {
+                        print(index, movie.genre)
+                        self.movieList[index].genreString.removeAll()
+                        
+                        for movieGenre in movie.genre {
+                            
+                            for g in json["genres"].arrayValue {
+                                
+                                if g["id"].intValue == movieGenre {
+                                    self.movieList[index].genreString.append(g["name"].stringValue)
+                                }
+                                print(index, self.movieList[index].genreString)
+                            }
+                        }
+                    }
+                    
+                    self.mainTableView.reloadData()
+                    
+                    
+                    
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+
     }
     
     
     
     // 일단 여기서 호출해보고, 다른 파일에 옮겨서 completion handler 사용하자
-    func callRequest() {
+    func callRequest(_  completion: @escaping () -> Void) {
         // 최종 url
         let url = "https://api.themoviedb.org/3/trending/movie/week?language=en-US"
         
@@ -61,6 +105,7 @@ class MainViewController: UIViewController {
                             genre.append(g.intValue)
                         }
                         
+                        let mainImage = item["poster_path"].stringValue
                         let backImage = item["backdrop_path"].stringValue   // 일단 이건 어떻게 하는건지 모르겠음 지금
                         let rate = item["vote_average"].doubleValue
                         let title = item["title"].stringValue
@@ -68,12 +113,12 @@ class MainViewController: UIViewController {
                         let id = item["id"].intValue
                         let overView = item["overview"].stringValue
                         
-                        let newMovie = MovieForMain(id: id, date: date, genre: genre, backImage: backImage, rate: rate, title: title, overview: overView)
+                        let newMovie = MovieForMain(id: id, date: date, genre: genre, genreString: [], mainImage: mainImage, backImage: backImage, rate: rate, title: title, overview: overView)
                         
                         self.movieList.append(newMovie)
                     }
                     
-                    
+                    completion()
                     //print(self.movieList)
                     self.mainTableView.reloadData()
                     
@@ -109,6 +154,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         vc.movieID = movieList[indexPath.row].id
         vc.movieName = movieList[indexPath.row].title
         vc.overView = movieList[indexPath.row].overview
+        
+        vc.mainImageLink = movieList[indexPath.row].mainImage
+        vc.backImageLink = movieList[indexPath.row].backImage
+        
+        tableView.reloadRows(at: [indexPath], with: .automatic)
         
         
         

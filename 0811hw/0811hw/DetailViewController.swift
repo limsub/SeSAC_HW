@@ -25,6 +25,9 @@ class DetailViewController: UIViewController {
     var movieName: String = ""
     var overView: String = ""
     
+    var mainImageLink: String = ""
+    var backImageLink: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +39,18 @@ class DetailViewController: UIViewController {
         castTextView.text = ""
         crewTextView.text = ""
         
+        overTextView.isEditable = false
+        castTextView.isEditable = false
+        crewTextView.isEditable = false
+        
+        
+        let urlMain = URL(string: "https://image.tmdb.org/t/p/w500/" + mainImageLink)
+        mainImageView.kf.setImage(with: urlMain)
+    
+        
+        let urlBack = URL(string: "https://image.tmdb.org/t/p/w500/" + backImageLink)
+        backImageView.kf.setImage(with: urlBack)
+        backImageView.contentMode = .scaleAspectFill
         
         
         // 최종 url

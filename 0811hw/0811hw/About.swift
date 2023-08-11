@@ -11,7 +11,9 @@ import Foundation
 struct MovieForMain {
     let id: Int
     let date: String
-    let genre: [Int]    // 일단 Int로 저장
+    var genre: [Int]    // 일단 Int로 저장
+    var genreString: [String]   // 장르 코드 가지고 스트링 저장해주자
+    let mainImage: String
     let backImage: String
     let rate: Double
     let title: String
@@ -28,3 +30,4 @@ struct MovieForDetail {
     let cast: [String]
     let crew: [String]
 }
+

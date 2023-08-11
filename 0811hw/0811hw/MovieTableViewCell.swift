@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieTableViewCell: UITableViewCell {
     
@@ -27,11 +28,11 @@ class MovieTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    
+        hashTagLabel.numberOfLines = 2
         
         lineView.backgroundColor = .black
     
-        
-
         backView.clipsToBounds = true
         backView.layer.cornerRadius = 20
         backView.layer.borderColor = UIColor.black.cgColor
@@ -46,12 +47,19 @@ class MovieTableViewCell: UITableViewCell {
     
     func designCell(_ sender: MovieForMain) {
         dateLabel.text = sender.date
-        hashTagLabel.text = "\(sender.genre[0])" // 일단 첫 번째만
+        
+        hashTagLabel.text = ""
+        for txt in sender.genreString {
+            hashTagLabel.text! += "#\(txt) "
+        }
+    
         // 일단 이미지 패스
         titleLabel.text = sender.title
         // 배우 패스
         rateLabel.text = "\(sender.rate)"
         
+        let url = URL(string: "https://image.tmdb.org/t/p/w500/" + sender.backImage)
+        mainImageView.kf.setImage(with: url)
         
     }
     
