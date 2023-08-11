@@ -13,6 +13,11 @@
 		4863609E2A861CF800AAE4FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4863609C2A861CF800AAE4FF /* Main.storyboard */; };
 		486360A02A861CFA00AAE4FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4863609F2A861CFA00AAE4FF /* Assets.xcassets */; };
 		486360A32A861CFA00AAE4FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486360A12A861CFA00AAE4FF /* LaunchScreen.storyboard */; };
+		486360AB2A86202100AAE4FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360AA2A86202100AAE4FF /* MainViewController.swift */; };
+		486360AD2A86204600AAE4FF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360AC2A86204600AAE4FF /* DetailViewController.swift */; };
+		486360B02A86206B00AAE4FF /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360AE2A86206B00AAE4FF /* MovieTableViewCell.swift */; };
+		486360B12A86206B00AAE4FF /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486360AF2A86206B00AAE4FF /* MovieTableViewCell.xib */; };
+		486360B32A86251A00AAE4FF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 486360B22A86251A00AAE4FF /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		4863609F2A861CFA00AAE4FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		486360A22A861CFA00AAE4FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		486360A42A861CFA00AAE4FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		486360AA2A86202100AAE4FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		486360AC2A86204600AAE4FF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		486360AE2A86206B00AAE4FF /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		486360AF2A86206B00AAE4FF /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		486360B22A86251A00AAE4FF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				486360982A861CF800AAE4FF /* SceneDelegate.swift */,
 				4863609A2A861CF800AAE4FF /* ViewController.swift */,
 				4863609C2A861CF800AAE4FF /* Main.storyboard */,
+				486360AE2A86206B00AAE4FF /* MovieTableViewCell.swift */,
+				486360AF2A86206B00AAE4FF /* MovieTableViewCell.xib */,
+				486360AC2A86204600AAE4FF /* DetailViewController.swift */,
+				486360AA2A86202100AAE4FF /* MainViewController.swift */,
+				486360B22A86251A00AAE4FF /* .gitignore */,
 				4863609F2A861CFA00AAE4FF /* Assets.xcassets */,
 				486360A12A861CFA00AAE4FF /* LaunchScreen.storyboard */,
 				486360A42A861CFA00AAE4FF /* Info.plist */,
@@ -125,8 +140,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486360B32A86251A00AAE4FF /* .gitignore in Resources */,
 				486360A32A861CFA00AAE4FF /* LaunchScreen.storyboard in Resources */,
 				486360A02A861CFA00AAE4FF /* Assets.xcassets in Resources */,
+				486360B12A86206B00AAE4FF /* MovieTableViewCell.xib in Resources */,
 				4863609E2A861CF800AAE4FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +157,10 @@
 			files = (
 				4863609B2A861CF800AAE4FF /* ViewController.swift in Sources */,
 				486360972A861CF800AAE4FF /* AppDelegate.swift in Sources */,
+				486360B02A86206B00AAE4FF /* MovieTableViewCell.swift in Sources */,
+				486360AD2A86204600AAE4FF /* DetailViewController.swift in Sources */,
 				486360992A861CF800AAE4FF /* SceneDelegate.swift in Sources */,
+				486360AB2A86202100AAE4FF /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
