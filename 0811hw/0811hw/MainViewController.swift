@@ -66,8 +66,9 @@ class MainViewController: UIViewController {
                         let title = item["title"].stringValue
                         
                         let id = item["id"].intValue
+                        let overView = item["overview"].stringValue
                         
-                        let newMovie = MovieForMain(id: id, date: date, genre: genre, backImage: backImage, rate: rate, title: title)
+                        let newMovie = MovieForMain(id: id, date: date, genre: genre, backImage: backImage, rate: rate, title: title, overview: overView)
                         
                         self.movieList.append(newMovie)
                     }
@@ -106,6 +107,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         vc.movieID = movieList[indexPath.row].id
+        vc.movieName = movieList[indexPath.row].title
+        vc.overView = movieList[indexPath.row].overview
         
         
         
