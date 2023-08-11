@@ -23,6 +23,8 @@
 		486360BB2A86264B00AAE4FF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 486360BA2A86264B00AAE4FF /* SwiftyJSON */; };
 		486360BD2A86292E00AAE4FF /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360BC2A86292E00AAE4FF /* About.swift */; };
 		486360C02A86512700AAE4FF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 486360BF2A86512700AAE4FF /* Kingfisher */; };
+		486360C22A86573000AAE4FF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360C12A86573000AAE4FF /* APIManager.swift */; };
+		486360C42A86595A00AAE4FF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360C32A86595A00AAE4FF /* URL+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		486360B22A86251A00AAE4FF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		486360B42A86253900AAE4FF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		486360BC2A86292E00AAE4FF /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		486360C12A86573000AAE4FF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		486360C32A86595A00AAE4FF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				486360AE2A86206B00AAE4FF /* MovieTableViewCell.swift */,
 				486360AF2A86206B00AAE4FF /* MovieTableViewCell.xib */,
 				486360AC2A86204600AAE4FF /* DetailViewController.swift */,
+				486360C12A86573000AAE4FF /* APIManager.swift */,
+				486360C32A86595A00AAE4FF /* URL+Extension.swift */,
 				486360AA2A86202100AAE4FF /* MainViewController.swift */,
 				486360B22A86251A00AAE4FF /* .gitignore */,
 				486360B42A86253900AAE4FF /* APIKey.swift */,
@@ -180,6 +186,8 @@
 				4863609B2A861CF800AAE4FF /* ViewController.swift in Sources */,
 				486360BD2A86292E00AAE4FF /* About.swift in Sources */,
 				486360B52A86253900AAE4FF /* APIKey.swift in Sources */,
+				486360C42A86595A00AAE4FF /* URL+Extension.swift in Sources */,
+				486360C22A86573000AAE4FF /* APIManager.swift in Sources */,
 				486360972A861CF800AAE4FF /* AppDelegate.swift in Sources */,
 				486360B02A86206B00AAE4FF /* MovieTableViewCell.swift in Sources */,
 				486360AD2A86204600AAE4FF /* DetailViewController.swift in Sources */,

@@ -53,40 +53,54 @@ class DetailViewController: UIViewController {
         backImageView.contentMode = .scaleAspectFill
         
         
-        // 최종 url
-        let url = "https://api.themoviedb.org/3/movie/\(movieID)/credits"
         
-        // header (HTTPHeader 아님!!)
-        let header: HTTPHeaders = ["Authorization" : APIKey.tmdb]
-        
-        // SwiftyJSON : Work with Alamofire
-        AF.request(url, method: .get, headers: header)
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    print("JSON: \(json)")
-                    
-                    
-                    
-                    for person in json["cast"].arrayValue {
-                        self.castTextView.text += person["name"].stringValue
-                        self.castTextView.text += "\n"
-                    }
-                    
-                    for person in json["crew"].arrayValue {
-                        self.crewTextView.text += person["name"].stringValue
-                        self.crewTextView.text += "\n"
-                    }
-                    
-                    
-                    
-                    
-                case .failure(let error):
-                    print(error)
-                }
+        APIManager.shared.callRequest(.movieDetail, movieID) { json in
+            for person in json["cast"].arrayValue {
+                self.castTextView.text += person["name"].stringValue
+                self.castTextView.text += "\n"
             }
+            
+            for person in json["crew"].arrayValue {
+                self.crewTextView.text += person["name"].stringValue
+                self.crewTextView.text += "\n"
+            }
+        }
+        
+        
+//        // 최종 url
+//        let url = "https://api.themoviedb.org/3/movie/\(movieID)/credits"
+//        
+//        // header (HTTPHeader 아님!!)
+//        let header: HTTPHeaders = ["Authorization" : APIKey.tmdb]
+//        
+//        // SwiftyJSON : Work with Alamofire
+//        AF.request(url, method: .get, headers: header)
+//            .validate()
+//            .responseJSON { response in
+//                switch response.result {
+//                case .success(let value):
+//                    let json = JSON(value)
+//                    print("JSON: \(json)")
+//                    
+//                    
+//                    
+//                    for person in json["cast"].arrayValue {
+//                        self.castTextView.text += person["name"].stringValue
+//                        self.castTextView.text += "\n"
+//                    }
+//                    
+//                    for person in json["crew"].arrayValue {
+//                        self.crewTextView.text += person["name"].stringValue
+//                        self.crewTextView.text += "\n"
+//                    }
+//                    
+//                    
+//                    
+//                    
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
 
         
     }
