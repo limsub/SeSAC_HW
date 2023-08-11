@@ -44,11 +44,11 @@ class DetailViewController: UIViewController {
         crewTextView.isEditable = false
         
         
-        let urlMain = URL(string: "https://image.tmdb.org/t/p/w500/" + mainImageLink)
+        let urlMain = URL(string: Endpoint.imagePrefix.requestURL + mainImageLink)
         mainImageView.kf.setImage(with: urlMain)
     
         
-        let urlBack = URL(string: "https://image.tmdb.org/t/p/w500/" + backImageLink)
+        let urlBack = URL(string: Endpoint.imagePrefix.requestURL + backImageLink)
         backImageView.kf.setImage(with: urlBack)
         backImageView.contentMode = .scaleAspectFill
         
@@ -69,10 +69,10 @@ class DetailViewController: UIViewController {
         
 //        // 최종 url
 //        let url = "https://api.themoviedb.org/3/movie/\(movieID)/credits"
-//        
+//
 //        // header (HTTPHeader 아님!!)
 //        let header: HTTPHeaders = ["Authorization" : APIKey.tmdb]
-//        
+//
 //        // SwiftyJSON : Work with Alamofire
 //        AF.request(url, method: .get, headers: header)
 //            .validate()
@@ -81,22 +81,22 @@ class DetailViewController: UIViewController {
 //                case .success(let value):
 //                    let json = JSON(value)
 //                    print("JSON: \(json)")
-//                    
-//                    
-//                    
+//
+//
+//
 //                    for person in json["cast"].arrayValue {
 //                        self.castTextView.text += person["name"].stringValue
 //                        self.castTextView.text += "\n"
 //                    }
-//                    
+//
 //                    for person in json["crew"].arrayValue {
 //                        self.crewTextView.text += person["name"].stringValue
 //                        self.crewTextView.text += "\n"
 //                    }
-//                    
-//                    
-//                    
-//                    
+//
+//
+//
+//
 //                case .failure(let error):
 //                    print(error)
 //                }

@@ -28,6 +28,8 @@ class MovieTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        mainImageView.contentMode = .scaleAspectFill
     
         hashTagLabel.numberOfLines = 2
         
@@ -56,9 +58,10 @@ class MovieTableViewCell: UITableViewCell {
         // 일단 이미지 패스
         titleLabel.text = sender.title
         // 배우 패스
-        rateLabel.text = "\(sender.rate)"
+        rateLabel.text = "평정 : \(sender.rate)"
         
-        let url = URL(string: "https://image.tmdb.org/t/p/w500/" + sender.backImage)
+        
+        let url = URL(string: Endpoint.imagePrefix.requestURL + sender.backImage)
         mainImageView.kf.setImage(with: url)
         
     }

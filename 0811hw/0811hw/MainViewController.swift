@@ -20,13 +20,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
         let nib = UINib(nibName: "MovieTableViewCell", bundle: nil)
         mainTableView.register(nib, forCellReuseIdentifier: "MovieTableViewCell")
         
-        mainTableView.rowHeight = 430
+        mainTableView.rowHeight = 400
 
         callRequest(callRequest2)
     }

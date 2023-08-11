@@ -51,14 +51,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U8G-7D-RfP">
                                 <rect key="frame" x="0.0" y="59.000000000000014" width="393" height="170.33333333333337"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxj-ug-tDP">
-                                <rect key="frame" x="20" y="79" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxj-ug-tDP">
+                                <rect key="frame" x="20" y="69" width="353" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="A62-G6-nDL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QKG-HL-saj">
-                                <rect key="frame" x="20" y="110" width="73" height="109.33333333333331"/>
+                                <rect key="frame" x="20" y="109" width="73.666666666666671" height="110.33333333333331"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QKG-HL-saj" secondAttribute="height" multiplier="2:3" id="T14-1y-eNS"/>
                                 </constraints>
@@ -127,11 +130,12 @@
                             <constraint firstItem="FQp-fE-bIK" firstAttribute="leading" secondItem="TDo-xG-9GK" secondAttribute="leading" constant="20" id="LWB-a5-GYo"/>
                             <constraint firstItem="YKK-tT-00v" firstAttribute="top" secondItem="dM7-Iq-Prm" secondAttribute="bottom" constant="10" id="MlA-0d-wie"/>
                             <constraint firstItem="QKG-HL-saj" firstAttribute="top" secondItem="Dxj-ug-tDP" secondAttribute="bottom" constant="10" id="O1x-ny-tbM"/>
+                            <constraint firstItem="TDo-xG-9GK" firstAttribute="trailing" secondItem="Dxj-ug-tDP" secondAttribute="trailing" constant="20" id="Vcy-qR-WGn"/>
                             <constraint firstItem="U8G-7D-RfP" firstAttribute="top" secondItem="TDo-xG-9GK" secondAttribute="top" id="YFm-xK-Zpo"/>
                             <constraint firstItem="b68-Ki-jgB" firstAttribute="top" secondItem="U8G-7D-RfP" secondAttribute="bottom" constant="30" id="cZG-sl-hPP"/>
                             <constraint firstItem="YKK-tT-00v" firstAttribute="leading" secondItem="TDo-xG-9GK" secondAttribute="leading" constant="20" id="d4W-Lq-B56"/>
                             <constraint firstItem="TDo-xG-9GK" firstAttribute="trailing" secondItem="FQp-fE-bIK" secondAttribute="trailing" constant="20" id="gVl-da-1rR"/>
-                            <constraint firstItem="Dxj-ug-tDP" firstAttribute="top" secondItem="TDo-xG-9GK" secondAttribute="top" constant="20" id="gbA-NK-IVe"/>
+                            <constraint firstItem="Dxj-ug-tDP" firstAttribute="top" secondItem="TDo-xG-9GK" secondAttribute="top" constant="10" id="gbA-NK-IVe"/>
                             <constraint firstItem="QKG-HL-saj" firstAttribute="leading" secondItem="TDo-xG-9GK" secondAttribute="leading" constant="20" id="gee-7v-LFY"/>
                             <constraint firstItem="U8G-7D-RfP" firstAttribute="bottom" secondItem="QKG-HL-saj" secondAttribute="bottom" constant="10" id="gjd-lJ-n11"/>
                             <constraint firstItem="TDo-xG-9GK" firstAttribute="trailing" secondItem="U8G-7D-RfP" secondAttribute="trailing" id="pG7-rh-VCQ"/>
