@@ -25,6 +25,7 @@
 		486360C02A86512700AAE4FF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 486360BF2A86512700AAE4FF /* Kingfisher */; };
 		486360C22A86573000AAE4FF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360C12A86573000AAE4FF /* APIManager.swift */; };
 		486360C42A86595A00AAE4FF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486360C32A86595A00AAE4FF /* URL+Extension.swift */; };
+		48A52BB82A8A4F0B00E0E09D /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A52BB72A8A4F0B00E0E09D /* Struct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		486360BC2A86292E00AAE4FF /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		486360C12A86573000AAE4FF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		486360C32A86595A00AAE4FF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		48A52BB72A8A4F0B00E0E09D /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				486360AF2A86206B00AAE4FF /* MovieTableViewCell.xib */,
 				486360AC2A86204600AAE4FF /* DetailViewController.swift */,
 				486360C12A86573000AAE4FF /* APIManager.swift */,
+				48A52BB72A8A4F0B00E0E09D /* Struct.swift */,
 				486360C32A86595A00AAE4FF /* URL+Extension.swift */,
 				486360AA2A86202100AAE4FF /* MainViewController.swift */,
 				486360B22A86251A00AAE4FF /* .gitignore */,
@@ -193,6 +196,7 @@
 				486360AD2A86204600AAE4FF /* DetailViewController.swift in Sources */,
 				486360992A861CF800AAE4FF /* SceneDelegate.swift in Sources */,
 				486360AB2A86202100AAE4FF /* MainViewController.swift in Sources */,
+				48A52BB82A8A4F0B00E0E09D /* Struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

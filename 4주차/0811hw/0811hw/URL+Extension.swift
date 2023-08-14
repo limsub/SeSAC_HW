@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-
-
 extension URL {
     
     static let baseURL = "https://api.themoviedb.org/3/"

@@ -15,11 +15,17 @@ class DetailViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var backImageView: UIImageView!
     @IBOutlet var mainImageView: UIImageView!
+    @IBOutlet var contentLabel: UILabel!
+
     
-    @IBOutlet var overTextView: UITextView!
+    @IBOutlet var fullBUtton: UIButton!
+    
+   //@IBOutlet var overTextView: UITextView!
     @IBOutlet var castTextView: UITextView!
     @IBOutlet var crewTextView: UITextView!
     
+    
+    var isFull = false
     
     var movieID: Int = 0
     var movieName: String = ""
@@ -28,32 +34,41 @@ class DetailViewController: UIViewController {
     var mainImageLink: String = ""
     var backImageLink: String = ""
     
+    func checkFull() {
+        contentLabel.numberOfLines = (isFull) ? 0 : 3
+        fullBUtton.setTitle( (isFull) ? "줄이기" : "전체보기", for: .normal)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(movieID)
+        
+        checkFull()
+        
+        //print(movieID)
         
         titleLabel.text = movieName
-        overTextView.text = overView
+        //overTextView.text = overView
+        contentLabel.text = overView
         
         castTextView.text = ""
         crewTextView.text = ""
         
-        overTextView.isEditable = false
+        //overTextView.isEditable = false
         castTextView.isEditable = false
         crewTextView.isEditable = false
         
         
         let urlMain = URL(string: Endpoint.imagePrefix.requestURL + mainImageLink)
         mainImageView.kf.setImage(with: urlMain)
-    
         
         let urlBack = URL(string: Endpoint.imagePrefix.requestURL + backImageLink)
         backImageView.kf.setImage(with: urlBack)
         backImageView.contentMode = .scaleAspectFill
         
-        
-        
+        // 실질적으로 api에서 받아와서 레이블에 써주는건 cast, crew 리스트
+        // 나머지는 화면 전환 시 값 전달로 받아옴
         APIManager.shared.callRequest(.movieDetail, movieID) { json in
             for person in json["cast"].arrayValue {
                 self.castTextView.text += person["name"].stringValue
@@ -65,44 +80,13 @@ class DetailViewController: UIViewController {
                 self.crewTextView.text += "\n"
             }
         }
-        
-        
-//        // 최종 url
-//        let url = "https://api.themoviedb.org/3/movie/\(movieID)/credits"
-//
-//        // header (HTTPHeader 아님!!)
-//        let header: HTTPHeaders = ["Authorization" : APIKey.tmdb]
-//
-//        // SwiftyJSON : Work with Alamofire
-//        AF.request(url, method: .get, headers: header)
-//            .validate()
-//            .responseJSON { response in
-//                switch response.result {
-//                case .success(let value):
-//                    let json = JSON(value)
-//                    print("JSON: \(json)")
-//
-//
-//
-//                    for person in json["cast"].arrayValue {
-//                        self.castTextView.text += person["name"].stringValue
-//                        self.castTextView.text += "\n"
-//                    }
-//
-//                    for person in json["crew"].arrayValue {
-//                        self.crewTextView.text += person["name"].stringValue
-//                        self.crewTextView.text += "\n"
-//                    }
-//
-//
-//
-//
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            }
-
-        
     }
-
+    
+    
+    @IBAction func fullButtonTapped(_ sender: UIButton) {
+        isFull.toggle()
+        
+        checkFull()
+    }
+    
 }
