@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		480565702A8CB9370071344D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 4805656F2A8CB9370071344D /* SwiftyJSON */; };
+		480565732A8CE27F0071344D /* TMDBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565722A8CE27F0071344D /* TMDBViewController.swift */; };
+		480565762A8CE2A70071344D /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565742A8CE2A70071344D /* EpisodeCollectionViewCell.swift */; };
+		480565772A8CE2A70071344D /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 480565752A8CE2A70071344D /* EpisodeCollectionViewCell.xib */; };
+		4805657A2A8CE2B60071344D /* SeasonCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565782A8CE2B60071344D /* SeasonCollectionReusableView.swift */; };
+		4805657B2A8CE2B60071344D /* SeasonCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 480565792A8CE2B60071344D /* SeasonCollectionReusableView.xib */; };
+		4805657D2A8CF25B0071344D /* AboutTMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805657C2A8CF25B0071344D /* AboutTMDB.swift */; };
 		48534A672A8CAD5900A2649D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48534A662A8CAD5900A2649D /* AppDelegate.swift */; };
 		48534A692A8CAD5900A2649D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48534A682A8CAD5900A2649D /* SceneDelegate.swift */; };
 		48534A6B2A8CAD5900A2649D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48534A6A2A8CAD5900A2649D /* ViewController.swift */; };
@@ -28,6 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		480565722A8CE27F0071344D /* TMDBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBViewController.swift; sourceTree = "<group>"; };
+		480565742A8CE2A70071344D /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
+		480565752A8CE2A70071344D /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
+		480565782A8CE2B60071344D /* SeasonCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonCollectionReusableView.swift; sourceTree = "<group>"; };
+		480565792A8CE2B60071344D /* SeasonCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonCollectionReusableView.xib; sourceTree = "<group>"; };
+		4805657C2A8CF25B0071344D /* AboutTMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTMDB.swift; sourceTree = "<group>"; };
 		48534A632A8CAD5900A2649D /* 0816hw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 0816hw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48534A662A8CAD5900A2649D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48534A682A8CAD5900A2649D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +73,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		480565712A8CE2450071344D /* TMDB */ = {
+			isa = PBXGroup;
+			children = (
+				480565722A8CE27F0071344D /* TMDBViewController.swift */,
+				480565742A8CE2A70071344D /* EpisodeCollectionViewCell.swift */,
+				480565752A8CE2A70071344D /* EpisodeCollectionViewCell.xib */,
+				480565782A8CE2B60071344D /* SeasonCollectionReusableView.swift */,
+				480565792A8CE2B60071344D /* SeasonCollectionReusableView.xib */,
+				4805657C2A8CF25B0071344D /* AboutTMDB.swift */,
+			);
+			path = TMDB;
+			sourceTree = "<group>";
+		};
 		48534A5A2A8CAD5900A2649D = {
 			isa = PBXGroup;
 			children = (
@@ -80,12 +105,14 @@
 		48534A652A8CAD5900A2649D /* 0816hw */ = {
 			isa = PBXGroup;
 			children = (
-				48534A8C2A8CB28800A2649D /* Basic */,
-				48534A8B2A8CB26900A2649D /* KakaoVideo */,
-				48534A8A2A8CB24000A2649D /* APIRequest */,
 				48534A6F2A8CAD5B00A2649D /* Assets.xcassets */,
 				48534A712A8CAD5B00A2649D /* LaunchScreen.storyboard */,
 				48534A742A8CAD5B00A2649D /* Info.plist */,
+				480565712A8CE2450071344D /* TMDB */,
+				48534A6C2A8CAD5900A2649D /* Main.storyboard */,
+				48534A8C2A8CB28800A2649D /* Basic */,
+				48534A8B2A8CB26900A2649D /* KakaoVideo */,
+				48534A8A2A8CB24000A2649D /* APIRequest */,
 			);
 			path = 0816hw;
 			sourceTree = "<group>";
@@ -106,7 +133,6 @@
 		48534A8B2A8CB26900A2649D /* KakaoVideo */ = {
 			isa = PBXGroup;
 			children = (
-				48534A6C2A8CAD5900A2649D /* Main.storyboard */,
 				48534A7C2A8CADF000A2649D /* VideoTableViewCell.swift */,
 				48534A7D2A8CADF000A2649D /* VideoTableViewCell.xib */,
 				48534A7A2A8CADAD00A2649D /* VideoViewController.swift */,
@@ -196,7 +222,9 @@
 				48534A732A8CAD5B00A2649D /* LaunchScreen.storyboard in Resources */,
 				48534A7F2A8CADF000A2649D /* VideoTableViewCell.xib in Resources */,
 				48534A702A8CAD5B00A2649D /* Assets.xcassets in Resources */,
+				480565772A8CE2A70071344D /* EpisodeCollectionViewCell.xib in Resources */,
 				48534A6E2A8CAD5900A2649D /* Main.storyboard in Resources */,
+				4805657B2A8CE2B60071344D /* SeasonCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,11 +235,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4805657D2A8CF25B0071344D /* AboutTMDB.swift in Sources */,
+				4805657A2A8CE2B60071344D /* SeasonCollectionReusableView.swift in Sources */,
+				480565732A8CE27F0071344D /* TMDBViewController.swift in Sources */,
 				48534A6B2A8CAD5900A2649D /* ViewController.swift in Sources */,
 				48534A852A8CAF3400A2649D /* APIKey.swift in Sources */,
 				48534A8E2A8CB31100A2649D /* APIManager.swift in Sources */,
 				48534A872A8CB1B900A2649D /* EndPoint.swift in Sources */,
 				48534A812A8CAEFF00A2649D /* About.swift in Sources */,
+				480565762A8CE2A70071344D /* EpisodeCollectionViewCell.swift in Sources */,
 				48534A672A8CAD5900A2649D /* AppDelegate.swift in Sources */,
 				48534A892A8CB1F000A2649D /* URL+Extension.swift in Sources */,
 				48534A7B2A8CADAD00A2649D /* VideoViewController.swift in Sources */,
