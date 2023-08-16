@@ -22,6 +22,7 @@ class Translate2ViewController: UIViewController {
     let firstPickerView = UIPickerView()
     let secondPickerView = UIPickerView()
     
+    // 레이블에 띄워줄 문구: api 쿼리
     let dict = [
         "Korean": "ko",
         "English": "en",
@@ -41,16 +42,12 @@ class Translate2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(dict)
-        print(dict.keys)
-        print(Array(dict.keys)[0])
-        
-        
         design(firstTextField)
         design(secondTextField)
         design(firstTextView)
         design(secondTextView)
         design(translateButton)
+        
         translateButton.setTitle("Translate!", for: .normal)
         
         firstPickerView.delegate = self
@@ -96,8 +93,6 @@ class Translate2ViewController: UIViewController {
             "text": firstTextView.text!
         ]
         
-        print(dict[firstTextField.text!]!, dict[secondTextField.text!]!)
-        
         // SwiftyJSON : Work with Alamofire
         AF.request(url, method: .post, parameters: parameter, headers: header)
             .validate()
@@ -120,6 +115,7 @@ class Translate2ViewController: UIViewController {
         view.endEditing(true)
     }
 }
+
 
 extension Translate2ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

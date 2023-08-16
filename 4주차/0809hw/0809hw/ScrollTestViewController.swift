@@ -9,7 +9,6 @@ import UIKit
 
 class ScrollTestViewController: UIViewController {
 
-    
     @IBOutlet var mainTableView: UITableView!
     
     var count = 100
@@ -19,14 +18,7 @@ class ScrollTestViewController: UIViewController {
         
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        
-        
-
-    
     }
-    
-
-
 }
 
 extension ScrollTestViewController: UITableViewDelegate, UITableViewDataSource {
@@ -38,7 +30,6 @@ extension ScrollTestViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScrollTestTableViewCell") as! ScrollTestTableViewCell
             
         cell.mainLabel.text = "\(indexPath.row)"
-        
         return cell
     }
 }
