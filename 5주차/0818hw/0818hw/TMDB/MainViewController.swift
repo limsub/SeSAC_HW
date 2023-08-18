@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
     var seasonInfo: Tv?
     var episodeInfo: [Tvdetail] = []
     
+    
     var seriesId = 113268
     
     
@@ -37,6 +38,8 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainCollectionView.keyboardDismissMode = .onDrag
         
         configureSearchBar()
         configureCollectionView()
@@ -104,6 +107,17 @@ class MainViewController: UIViewController {
             print("call Episode: seson - \(season)")
             self.episodeInfo[season] = value    // 얘가 문제야 얘가...
             completionHandler()
+        }
+    }
+    
+    func callSearchList(_ query: String) {
+        TmdbAPIManager.shared.callSearch(query) { value in
+            print(value)
+            if !value.results.isEmpty {
+                self.seriesId = value.results[0].id
+                
+                self.callSeasonRequest(self.seriesId)
+            }
         }
     }
     
@@ -207,5 +221,14 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 
 extension MainViewController: UISearchBarDelegate {
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let query = searchBar.text else { return }
+        
+        if query != "" {
+            callSearchList(query)
+            
+        }
+        
+        
+    }
 }

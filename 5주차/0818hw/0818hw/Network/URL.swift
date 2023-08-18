@@ -28,4 +28,12 @@ extension URL {
     static func makeEpisodeUrl(_ seriesId: Int, _ season: Int) -> String {
         return baseUrl + "\(seriesId)/season/\(season)?language=ko-KO"
     }
+    
+    
+    static func makeSearchingUrl(_ query: String) -> String {
+        guard let txt = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return ""}
+        
+        return "https://api.themoviedb.org/3/search/tv?query=" + txt
+    }
+    
 }

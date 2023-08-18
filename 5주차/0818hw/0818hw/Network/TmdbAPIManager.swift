@@ -63,5 +63,25 @@ class TmdbAPIManager {
                 }
             }
     }
+    
+    
+    
+    func callSearch(_ query: String, completionHandler: @escaping (Searching) -> Void) {
+        let url = URL.makeSearchingUrl(query)
+        
+        AF.request(url, method: .get, headers: header)
+            .validate(statusCode: 200...500)
+            .responseDecodable(of: Searching.self) { response in
+                let statusCode = response.response?.statusCode ?? 500
+                
+                if (statusCode == 200) {
+                    guard let value = response.value else { return }
+                    completionHandler(value)
+                } else {
+                    print("Error!! statusCode : \(statusCode)")
+                    print(response)
+                }
+            }
+    }
 }
 
