@@ -16,8 +16,18 @@
 		480565B52A8F4DD00071344D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 480565B42A8F4DD00071344D /* SwiftyJSON */; };
 		480565B82A8F4DD90071344D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 480565B72A8F4DD90071344D /* Kingfisher */; };
 		480565BB2A8F4DE20071344D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 480565BA2A8F4DE20071344D /* Alamofire */; };
-		480565BE2A8F4E010071344D /* .gitignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565BD2A8F4E010071344D /* .gitignore.swift */; };
 		480565C02A8F4E170071344D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 480565BF2A8F4E170071344D /* .gitignore */; };
+		480565C22A8F4E430071344D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565C12A8F4E430071344D /* APIKey.swift */; };
+		480565C52A8F51990071344D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565C42A8F51990071344D /* MainViewController.swift */; };
+		480565C82A8F51B90071344D /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565C62A8F51B90071344D /* EpisodeCollectionViewCell.swift */; };
+		480565C92A8F51B90071344D /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 480565C72A8F51B90071344D /* EpisodeCollectionViewCell.xib */; };
+		480565CC2A8F51F00071344D /* SeasonCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565CA2A8F51F00071344D /* SeasonCollectionReusableView.swift */; };
+		480565CD2A8F51F00071344D /* SeasonCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 480565CB2A8F51F00071344D /* SeasonCollectionReusableView.xib */; };
+		480565D02A8F547E0071344D /* AboutTMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565CF2A8F547E0071344D /* AboutTMDB.swift */; };
+		480565D22A8F55090071344D /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565D12A8F55090071344D /* URL.swift */; };
+		480565D42A8F56E00071344D /* TmdbAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565D32A8F56E00071344D /* TmdbAPIManager.swift */; };
+		480565D72A8F5B110071344D /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565D62A8F5B110071344D /* Identifier.swift */; };
+		480565D92A8F5CA20071344D /* ConfigureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480565D82A8F5CA20071344D /* ConfigureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +39,18 @@
 		480565A82A8F4D9C0071344D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		480565AB2A8F4D9C0071344D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		480565AD2A8F4D9C0071344D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		480565BD2A8F4E010071344D /* .gitignore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .gitignore.swift; sourceTree = "<group>"; };
 		480565BF2A8F4E170071344D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		480565C12A8F4E430071344D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		480565C42A8F51990071344D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		480565C62A8F51B90071344D /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
+		480565C72A8F51B90071344D /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
+		480565CA2A8F51F00071344D /* SeasonCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonCollectionReusableView.swift; sourceTree = "<group>"; };
+		480565CB2A8F51F00071344D /* SeasonCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonCollectionReusableView.xib; sourceTree = "<group>"; };
+		480565CF2A8F547E0071344D /* AboutTMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTMDB.swift; sourceTree = "<group>"; };
+		480565D12A8F55090071344D /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		480565D32A8F56E00071344D /* TmdbAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbAPIManager.swift; sourceTree = "<group>"; };
+		480565D62A8F5B110071344D /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
+		480565D82A8F5CA20071344D /* ConfigureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +86,12 @@
 		4805659E2A8F4D9B0071344D /* 0818hw */ = {
 			isa = PBXGroup;
 			children = (
+				480565D52A8F5B030071344D /* Protocol */,
+				480565CE2A8F54700071344D /* About */,
+				480565C32A8F51850071344D /* TMDB */,
 				480565BC2A8F4DF50071344D /* Network */,
-				4805659F2A8F4D9B0071344D /* AppDelegate.swift */,
 				480565A12A8F4D9B0071344D /* SceneDelegate.swift */,
+				4805659F2A8F4D9B0071344D /* AppDelegate.swift */,
 				480565A32A8F4D9B0071344D /* ViewController.swift */,
 				480565A52A8F4D9B0071344D /* Main.storyboard */,
 				480565A82A8F4D9C0071344D /* Assets.xcassets */,
@@ -81,10 +104,41 @@
 		480565BC2A8F4DF50071344D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				480565BD2A8F4E010071344D /* .gitignore.swift */,
+				480565D12A8F55090071344D /* URL.swift */,
 				480565BF2A8F4E170071344D /* .gitignore */,
+				480565C12A8F4E430071344D /* APIKey.swift */,
+				480565D32A8F56E00071344D /* TmdbAPIManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		480565C32A8F51850071344D /* TMDB */ = {
+			isa = PBXGroup;
+			children = (
+				480565C42A8F51990071344D /* MainViewController.swift */,
+				480565C62A8F51B90071344D /* EpisodeCollectionViewCell.swift */,
+				480565C72A8F51B90071344D /* EpisodeCollectionViewCell.xib */,
+				480565CA2A8F51F00071344D /* SeasonCollectionReusableView.swift */,
+				480565CB2A8F51F00071344D /* SeasonCollectionReusableView.xib */,
+			);
+			path = TMDB;
+			sourceTree = "<group>";
+		};
+		480565CE2A8F54700071344D /* About */ = {
+			isa = PBXGroup;
+			children = (
+				480565CF2A8F547E0071344D /* AboutTMDB.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		480565D52A8F5B030071344D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				480565D62A8F5B110071344D /* Identifier.swift */,
+				480565D82A8F5CA20071344D /* ConfigureCell.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +209,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480565CD2A8F51F00071344D /* SeasonCollectionReusableView.xib in Resources */,
 				480565C02A8F4E170071344D /* .gitignore in Resources */,
+				480565C92A8F51B90071344D /* EpisodeCollectionViewCell.xib in Resources */,
 				480565AC2A8F4D9C0071344D /* LaunchScreen.storyboard in Resources */,
 				480565A92A8F4D9C0071344D /* Assets.xcassets in Resources */,
 				480565A72A8F4D9B0071344D /* Main.storyboard in Resources */,
@@ -169,10 +225,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480565C82A8F51B90071344D /* EpisodeCollectionViewCell.swift in Sources */,
 				480565A42A8F4D9B0071344D /* ViewController.swift in Sources */,
-				480565BE2A8F4E010071344D /* .gitignore.swift in Sources */,
+				480565D22A8F55090071344D /* URL.swift in Sources */,
+				480565D42A8F56E00071344D /* TmdbAPIManager.swift in Sources */,
+				480565D92A8F5CA20071344D /* ConfigureCell.swift in Sources */,
+				480565D72A8F5B110071344D /* Identifier.swift in Sources */,
 				480565A02A8F4D9B0071344D /* AppDelegate.swift in Sources */,
+				480565CC2A8F51F00071344D /* SeasonCollectionReusableView.swift in Sources */,
+				480565D02A8F547E0071344D /* AboutTMDB.swift in Sources */,
 				480565A22A8F4D9B0071344D /* SceneDelegate.swift in Sources */,
+				480565C22A8F4E430071344D /* APIKey.swift in Sources */,
+				480565C52A8F51990071344D /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
