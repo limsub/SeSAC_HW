@@ -44,6 +44,7 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
         voteLabel.text = nil
     }
     
+    
     func designCell(_ sender: Episode) {
         if let sPath = sender.stillPath {
             posterImageView.kf.setImage(with: URL.makeImageUrl(sPath))
