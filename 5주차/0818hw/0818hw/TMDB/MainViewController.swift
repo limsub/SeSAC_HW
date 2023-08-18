@@ -16,7 +16,9 @@ import UIKit
 // 일단 처음은 빈 배열로 해야 할듯
 
 
-// 브레이킹 배드처럼 시즌 배열 맨 처음에 스페셜 있는건 버리자
+// 브레이킹 배드처럼 시즌 배열 맨 처음에 스페셜 있는건 버리자 -> 안버림
+
+// 시즌 0이 있냐 없냐가 좀 문젠데... 인덱스 때문에
 
 
 class MainViewController: UIViewController {
@@ -27,7 +29,10 @@ class MainViewController: UIViewController {
     var seasonInfo: Tv?
     var episodeInfo: [Tvdetail] = []
     
-    var seriesId = 1396
+    var seriesId = 113268
+    
+    
+    var isSeason0 = false
     
 
     override func viewDidLoad() {
@@ -45,21 +50,30 @@ class MainViewController: UIViewController {
         TmdbAPIManager.shared.callSeason(seriesId) { value in
             self.seasonInfo = value
             
-            print(value.seasons)
+            
+            //print(value.seasons)
             
             print("====================================")
             print(self.seasonInfo?.numberOfSeasons) // 5 -> 이걸로 가자 (x)
             print(self.seasonInfo?.seasons.count)   // 6 -> 이걸로 간다 (x) (o)
             
-            guard let seasonCnt = self.seasonInfo?.seasons.count else { return }
+            if (self.seasonInfo?.numberOfSeasons != self.seasonInfo?.seasons.count) {
+                self.isSeason0 = true
+            } else {
+                self.isSeason0 = false
+                
+            }
             
-            // episodeInfo의 크기를 잡아줌.. (맞는건지 잘 모르겠다)
-            for _ in 1...seasonCnt {
+            guard let seasonCnt = self.seasonInfo?.seasons.count else { return }
+            print("seasonCnt : \(seasonCnt)")
+            
+            // episodeInfo의 크기를 잡아줌.. (맞는건지 잘 모르겠다) - 시즌 0가 없는 경우가 있어서 + 1 시켜줌
+            for _ in 1...(seasonCnt + 1) {
                 self.episodeInfo.append(Tvdetail(id: "", airDate: "", episodes: [], name: "", overview: "", tvdetailID: 0, posterPath: "", seasonNumber: 0, voteAverage: 0))
             }
             
             
-            print("=====================")
+            print("====================================")
             
             // epsiode에 대한 정보 호출 (0 넣어주면 안되는 것 같다...왜지..?)
             let group = DispatchGroup()
@@ -87,7 +101,8 @@ class MainViewController: UIViewController {
         TmdbAPIManager.shared.callEpisode(seriesId, season) { value in
             print(value.name)
             //print(value.episodes)
-            self.episodeInfo[season] = value
+            print("call Episode: seson - \(season)")
+            self.episodeInfo[season] = value    // 얘가 문제야 얘가...
             completionHandler()
         }
     }
@@ -146,7 +161,13 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return episodeInfo[section].episodes.count
+        
+        if (isSeason0) {
+            return episodeInfo[section].episodes.count
+        } else {
+            return episodeInfo[section+1].episodes.count
+        }
+        
     }
     
     
@@ -155,7 +176,13 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodeCollectionViewCell.identifier, for: indexPath) as? EpisodeCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.designCell(episodeInfo[indexPath.section].episodes[indexPath.row])
+        if (isSeason0) {
+            cell.designCell(episodeInfo[indexPath.section].episodes[indexPath.row])
+        }
+        else {
+            cell.designCell(episodeInfo[indexPath.section+1].episodes[indexPath.row])
+        }
+        
         
         return cell
     }
@@ -165,6 +192,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         if (kind == UICollectionView.elementKindSectionHeader) {
             guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SeasonCollectionReusableView.identifier, for: indexPath) as?
                     SeasonCollectionReusableView else { return UICollectionReusableView() }
+            
+            
             
             view.designCell((seasonInfo?.seasons[indexPath.section])!)
             

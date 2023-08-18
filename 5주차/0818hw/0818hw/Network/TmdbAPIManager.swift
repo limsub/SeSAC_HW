@@ -26,6 +26,7 @@ class TmdbAPIManager {
             .validate(statusCode: 200...500)
             .responseDecodable(of: Tv.self) { response in
                 
+                
                 let statusCode = response.response?.statusCode ?? 500
                 
                 if (statusCode == 200) {
