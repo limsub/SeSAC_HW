@@ -41,14 +41,19 @@ class TmdbAPIManager {
     func callEpisode(_ seriesId: Int, _ season: Int, completionHandler: @escaping (Tvdetail)-> Void) {
         
         let url = URL.makeEpisodeUrl(seriesId, season)
+        print(url)
         
         AF.request(url, method: .get, headers: header)
             .validate(statusCode: 200...500)
             .responseDecodable(of: Tvdetail.self) { response in
                 
                 let statusCode = response.response?.statusCode ?? 500
+                print(statusCode)
                 
                 if (statusCode == 200) {
+                    print(response)
+                    print("hi")
+                    //print(response.value)
                     guard let value = response.value else { return }
                     completionHandler(value)
                 } else {

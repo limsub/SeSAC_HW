@@ -30,10 +30,28 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
         voteLabel.backgroundColor = .white
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        removeAll()
+    }
+    
+    func removeAll() {
+        posterImageView.image = nil
+        titleLabel.text = nil
+        contentLabel.text = nil
+        overViewLabel.text = nil
+        voteLabel.text = nil
+    }
+    
     func designCell(_ sender: Episode) {
-        posterImageView.kf.setImage(with: URL.makeImageUrl(sender.stillPath))
+        if let sPath = sender.stillPath {
+            posterImageView.kf.setImage(with: URL.makeImageUrl(sPath))
+        }
         titleLabel.text = sender.name
-        contentLabel.text = String(sender.runtime)
+        if let rTime = sender.runtime {
+            contentLabel.text = String(rTime) + "min"
+        }
         overViewLabel.text = sender.overview
         voteLabel.text = String(sender.voteAverage)
     }

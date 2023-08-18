@@ -194,13 +194,13 @@ struct Tvdetail: Codable {
 
 // MARK: - Episode
 struct Episode: Codable {
-    let airDate: String
+    let airDate: String?
     let episodeNumber: Int
     let episodeType: String
     let id: Int
     let name, overview, productionCode: String
-    let runtime, seasonNumber, showID: Int
-    let stillPath: String
+    let runtime, seasonNumber, showID: Int?
+    let stillPath: String?
     let voteAverage: Double
     let voteCount: Int
     let crew, guestStars: [Crew]
