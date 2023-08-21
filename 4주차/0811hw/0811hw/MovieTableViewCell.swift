@@ -25,6 +25,7 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet var backView: UIView!
     
     
+    @IBOutlet var originalTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -63,6 +64,9 @@ class MovieTableViewCell: UITableViewCell {
         
         let url = URL(string: Endpoint.imagePrefix.requestURL + sender.backImage)
         mainImageView.kf.setImage(with: url)
+        
+        
+        originalTitleLabel.text = sender.originalTitle
         
     }
     

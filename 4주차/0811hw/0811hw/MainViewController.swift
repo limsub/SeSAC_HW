@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
         
         APIManager.shared.callRequest(.movieTrend, 0) { json in
             for item in json["results"].arrayValue {
-                //print(item)
+                print(item)
                 
                 let date = item["release_date"].stringValue
                 
@@ -79,11 +79,12 @@ class MainViewController: UIViewController {
                 let backImage = item["backdrop_path"].stringValue
                 let rate = item["vote_average"].doubleValue
                 let title = item["title"].stringValue
+                let originalTitle = item["original_title"].stringValue
                 
                 let id = item["id"].intValue
                 let overView = item["overview"].stringValue
                 
-                let newMovie = MovieForMain(id: id, date: date, genre: genre, genreString: [], mainImage: mainImage, backImage: backImage, rate: rate, title: title, overview: overView)
+                let newMovie = MovieForMain(id: id, date: date, genre: genre, genreString: [], mainImage: mainImage, backImage: backImage, rate: rate, title: title, overview: overView, originalTitle: originalTitle)
                 
                 self.movieList.append(newMovie)
             }

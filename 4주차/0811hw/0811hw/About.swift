@@ -18,6 +18,7 @@ struct MovieForMain {
     let rate: Double
     let title: String
     let overview: String
+    let originalTitle: String
     
 }
 
